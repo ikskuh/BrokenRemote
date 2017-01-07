@@ -20,5 +20,8 @@
         <file>icons/battery-full.png</file>
         <file>icons/dime.png</file>
         <file>icons/nickle.png</file>
+        <file>icons/collectibles.png</file>
+        <file>icons/combined-heart.png</file>
+        <file>icons/reroll-enemies.png</file>
     </qresource>
 </RCC>

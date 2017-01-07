@@ -61,6 +61,10 @@
      <property name="title">
       <string>Hearts</string>
      </property>
+     <property name="icon">
+      <iconset resource="icons.qrc">
+       <normaloff>:/icons/combined-heart.png</normaloff>:/icons/combined-heart.png</iconset>
+     </property>
      <addaction name="separator"/>
      <addaction name="actionAdd_Half_Container"/>
      <addaction name="actionAdd_Container"/>
@@ -82,6 +86,10 @@
      <property name="title">
       <string>Collectibles</string>
      </property>
+     <property name="icon">
+      <iconset resource="icons.qrc">
+       <normaloff>:/icons/collectibles.png</normaloff>:/icons/collectibles.png</iconset>
+     </property>
      <addaction name="actionAdd_Coin"/>
      <addaction name="actionAdd_Nickel"/>
      <addaction name="actionAdd_Dime"/>
@@ -95,6 +103,10 @@
      <property name="title">
       <string>Active Item</string>
      </property>
+     <property name="icon">
+      <iconset resource="icons.qrc">
+       <normaloff>:/icons/battery-add.png</normaloff>:/icons/battery-add.png</iconset>
+     </property>
      <addaction name="actionFull_Charge"/>
      <addaction name="actionIncrease_Charge"/>
      <addaction name="actionDischarge"/>
@@ -103,6 +115,7 @@
     <addaction name="menuCollectibles"/>
     <addaction name="menuActive_Item"/>
     <addaction name="actionItems"/>
+    <addaction name="actionReroll_Enemies"/>
    </widget>
    <widget class="QMenu" name="menuScript">
     <property name="title">
@@ -441,6 +454,20 @@
    </property>
    <property name="toolTip">
     <string>Add Dime (10 Pennies)</string>
+   </property>
+  </action>
+  <action name="actionReroll_Enemies">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/reroll-enemies.png</normaloff>:/icons/reroll-enemies.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reroll Enemies</string>
+   </property>
+  </action>
+  <action name="actionCards">
+   <property name="text">
+    <string>Cards</string>
    </property>
   </action>
  </widget>

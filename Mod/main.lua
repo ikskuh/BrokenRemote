@@ -13,7 +13,7 @@ local function tryConnect(initial)
   if success then
     client:settimeout(0.01)
     Isaac.DebugString("Done: " .. tostring(client))
-    client:send("I am " .. Game():GetPlayer(0):GetName())
+    client:send("I am " .. Game():GetPlayer(0):GetName() .. "\n")
   else
     client = nil
   end

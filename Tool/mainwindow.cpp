@@ -254,3 +254,8 @@ void MainWindow::on_actionAdd_Dime_triggered()
 {
     this->executeRemoteCode("Game():GetPlayer(0):AddCoins(10)");
 }
+
+void MainWindow::on_actionReroll_Enemies_triggered()
+{
+    this->executeRemoteCode("for i,v in ipairs(Isaac.GetRoomEntities()) do local npc = v:ToNPC() if npc then Game():RerollEnemy(v) end end");
+}

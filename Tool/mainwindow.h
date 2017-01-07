@@ -76,6 +76,8 @@ private slots:
 
     void on_actionAdd_Dime_triggered();
 
+    void on_actionReroll_Enemies_triggered();
+
 private:
     Ui::MainWindow *ui;
     QTcpServer * server;
