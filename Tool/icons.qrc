@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/black-heart.png</file>
+        <file>icons/eternal-heart.png</file>
+        <file>icons/golden-heart.png</file>
+        <file>icons/half-black-heart.png</file>
+        <file>icons/half-red-heart.png</file>
+        <file>icons/half-soul-heart.png</file>
+        <file>icons/heart-container.png</file>
+        <file>icons/red-heart.png</file>
+        <file>icons/soul-heart.png</file>
+        <file>icons/play.png</file>
+        <file>icons/bomb.png</file>
+        <file>icons/coin.png</file>
+        <file>icons/golden-bomb.png</file>
+        <file>icons/golden-key.png</file>
+        <file>icons/key.png</file>
+        <file>icons/battery-add.png</file>
+        <file>icons/battery-empty.png</file>
+        <file>icons/battery-full.png</file>
+        <file>icons/dime.png</file>
+        <file>icons/nickle.png</file>
+    </qresource>
+</RCC>

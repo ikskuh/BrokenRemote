@@ -31,3 +31,6 @@ HEADERS  += mainwindow.h \
     scripteditor.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    icons.qrc

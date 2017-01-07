@@ -38,7 +38,7 @@
      <x>0</x>
      <y>0</y>
      <width>702</width>
-     <height>19</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -78,8 +78,30 @@
      <addaction name="separator"/>
      <addaction name="actionAdd_Golden_Heart"/>
     </widget>
+    <widget class="QMenu" name="menuCollectibles">
+     <property name="title">
+      <string>Collectibles</string>
+     </property>
+     <addaction name="actionAdd_Coin"/>
+     <addaction name="actionAdd_Nickel"/>
+     <addaction name="actionAdd_Dime"/>
+     <addaction name="actionAdd_Bomb"/>
+     <addaction name="actionAdd_Key"/>
+     <addaction name="separator"/>
+     <addaction name="actionAdd_Golden_Bomb"/>
+     <addaction name="actionAdd_Golden_Key"/>
+    </widget>
+    <widget class="QMenu" name="menuActive_Item">
+     <property name="title">
+      <string>Active Item</string>
+     </property>
+     <addaction name="actionFull_Charge"/>
+     <addaction name="actionIncrease_Charge"/>
+     <addaction name="actionDischarge"/>
+    </widget>
     <addaction name="menuHearts"/>
-    <addaction name="actionCollectibles"/>
+    <addaction name="menuCollectibles"/>
+    <addaction name="menuActive_Item"/>
     <addaction name="actionItems"/>
    </widget>
    <widget class="QMenu" name="menuScript">
@@ -219,59 +241,93 @@
     <string>Quit</string>
    </property>
   </action>
-  <action name="actionCollectibles">
-   <property name="text">
-    <string>Collectibles</string>
-   </property>
-  </action>
   <action name="actionItems">
    <property name="text">
     <string>Items</string>
    </property>
   </action>
   <action name="actionAdd_Half_Red">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/half-red-heart.png</normaloff>:/icons/half-red-heart.png</iconset>
+   </property>
    <property name="text">
     <string>Add ½ Red</string>
    </property>
   </action>
   <action name="actionAdd_Red">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/red-heart.png</normaloff>:/icons/red-heart.png</iconset>
+   </property>
    <property name="text">
     <string>Add Red</string>
    </property>
   </action>
   <action name="actionAdd_Half_Soul">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/half-soul-heart.png</normaloff>:/icons/half-soul-heart.png</iconset>
+   </property>
    <property name="text">
     <string>Add ½ Soul</string>
    </property>
   </action>
   <action name="actionAdd_Soul">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/soul-heart.png</normaloff>:/icons/soul-heart.png</iconset>
+   </property>
    <property name="text">
     <string>Add Soul</string>
    </property>
   </action>
   <action name="actionAdd_Half_Black">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/half-black-heart.png</normaloff>:/icons/half-black-heart.png</iconset>
+   </property>
    <property name="text">
     <string>Add ½ Black</string>
    </property>
   </action>
   <action name="actionAdd_Black">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/black-heart.png</normaloff>:/icons/black-heart.png</iconset>
+   </property>
    <property name="text">
     <string>Add Black</string>
    </property>
   </action>
   <action name="actionAdd_Golden_Heart">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/golden-heart.png</normaloff>:/icons/golden-heart.png</iconset>
+   </property>
    <property name="text">
     <string>Add Golden Heart</string>
    </property>
   </action>
   <action name="actionAdd_Eternal_Heart">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/eternal-heart.png</normaloff>:/icons/eternal-heart.png</iconset>
+   </property>
    <property name="text">
     <string>Add Eternal Heart</string>
    </property>
   </action>
   <action name="actionRun">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/play.png</normaloff>:/icons/play.png</iconset>
+   </property>
    <property name="text">
     <string>Run</string>
+   </property>
+   <property name="toolTip">
+    <string>Runs the current script.</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+R</string>
@@ -283,12 +339,114 @@
    </property>
   </action>
   <action name="actionAdd_Container">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/heart-container.png</normaloff>:/icons/heart-container.png</iconset>
+   </property>
    <property name="text">
     <string>Add Heart Container</string>
    </property>
   </action>
+  <action name="actionAdd_Coin">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/coin.png</normaloff>:/icons/coin.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Coin</string>
+   </property>
+  </action>
+  <action name="actionAdd_Bomb">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/bomb.png</normaloff>:/icons/bomb.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Bomb</string>
+   </property>
+  </action>
+  <action name="actionAdd_Key">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/key.png</normaloff>:/icons/key.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Key</string>
+   </property>
+  </action>
+  <action name="actionAdd_Golden_Bomb">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/golden-bomb.png</normaloff>:/icons/golden-bomb.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Golden Bomb</string>
+   </property>
+  </action>
+  <action name="actionAdd_Golden_Key">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/golden-key.png</normaloff>:/icons/golden-key.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Golden Key</string>
+   </property>
+  </action>
+  <action name="actionFull_Charge">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/battery-full.png</normaloff>:/icons/battery-full.png</iconset>
+   </property>
+   <property name="text">
+    <string>Full Charge</string>
+   </property>
+  </action>
+  <action name="actionIncrease_Charge">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/battery-add.png</normaloff>:/icons/battery-add.png</iconset>
+   </property>
+   <property name="text">
+    <string>Increase Charge</string>
+   </property>
+  </action>
+  <action name="actionDischarge">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/battery-empty.png</normaloff>:/icons/battery-empty.png</iconset>
+   </property>
+   <property name="text">
+    <string>Discharge</string>
+   </property>
+  </action>
+  <action name="actionAdd_Nickel">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/nickle.png</normaloff>:/icons/nickle.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Nickel</string>
+   </property>
+   <property name="toolTip">
+    <string>Add Nickle (5 Pennies)</string>
+   </property>
+  </action>
+  <action name="actionAdd_Dime">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/dime.png</normaloff>:/icons/dime.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Dime</string>
+   </property>
+   <property name="toolTip">
+    <string>Add Dime (10 Pennies)</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

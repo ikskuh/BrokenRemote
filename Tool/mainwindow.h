@@ -56,6 +56,26 @@ private slots:
 
     void on_actionAdd_Container_triggered();
 
+    void on_actionAdd_Coin_triggered();
+
+    void on_actionAdd_Bomb_triggered();
+
+    void on_actionAdd_Key_triggered();
+
+    void on_actionAdd_Golden_Bomb_triggered();
+
+    void on_actionAdd_Golden_Key_triggered();
+
+    void on_actionFull_Charge_triggered();
+
+    void on_actionIncrease_Charge_triggered();
+
+    void on_actionDischarge_triggered();
+
+    void on_actionAdd_Nickel_triggered();
+
+    void on_actionAdd_Dime_triggered();
+
 private:
     Ui::MainWindow *ui;
     QTcpServer * server;

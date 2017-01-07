@@ -92,6 +92,8 @@ void MainWindow::executeRemoteCode(const QString &code)
         .append('\n')
         .toUtf8();
 
+    qDebug() << "Execute" << QString::fromUtf8(data);
+
     for(QTcpSocket * sock : this->sockets)
     {
         sock->write(data);
@@ -198,4 +200,57 @@ void MainWindow::on_actionAdd_Half_Container_triggered()
 void MainWindow::on_actionAdd_Container_triggered()
 {
     this->executeRemoteCode("Game():GetPlayer(0):AddMaxHearts(2, true)");
+}
+
+void MainWindow::on_actionAdd_Coin_triggered()
+{
+    this->executeRemoteCode("Game():GetPlayer(0):AddCoins(1)");
+}
+
+void MainWindow::on_actionAdd_Bomb_triggered()
+{
+    this->executeRemoteCode("Game():GetPlayer(0):AddBombs(1)");
+}
+
+void MainWindow::on_actionAdd_Key_triggered()
+{
+    this->executeRemoteCode("Game():GetPlayer(0):AddKeys(1)");
+}
+
+void MainWindow::on_actionAdd_Golden_Bomb_triggered()
+{
+    this->executeRemoteCode("Game():GetPlayer(0):AddGoldenBomb()");
+}
+
+void MainWindow::on_actionAdd_Golden_Key_triggered()
+{
+    this->executeRemoteCode("Game():GetPlayer(0):AddGoldenKey()");
+}
+
+void MainWindow::on_actionFull_Charge_triggered()
+{
+    this->executeRemoteCode("Game():GetPlayer(0):SetActiveCharge(1000)");
+}
+
+void MainWindow::on_actionIncrease_Charge_triggered()
+{
+    this->executeRemoteCode(
+        "local p = Game():GetPlayer(0)\n"
+        "local c = p:GetActiveCharge()\n"
+        "p:SetActiveCharge(c + 1)");
+}
+
+void MainWindow::on_actionDischarge_triggered()
+{
+    this->executeRemoteCode("Game():GetPlayer(0):SetActiveCharge(0)");
+}
+
+void MainWindow::on_actionAdd_Nickel_triggered()
+{
+    this->executeRemoteCode("Game():GetPlayer(0):AddCoins(5)");
+}
+
+void MainWindow::on_actionAdd_Dime_triggered()
+{
+    this->executeRemoteCode("Game():GetPlayer(0):AddCoins(10)");
 }

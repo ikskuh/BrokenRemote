@@ -62,31 +62,32 @@ function mod:update()
     
       Isaac.DebugString("Received command: " .. tostring(cmd))
     
-      local ok, err = pcall(function()
-        local p = print
-        print = function(x, ...)
-          if x == nil then
-            client:send("\n")
-          else
-            client:send(tostring(x))
-            client:send("\t")
-            print(...)
-          end
+      local p = print
+      print = function(x, ...)
+        if x == nil then
+          client:send("\n")
+        else
+          client:send(tostring(x))
+          client:send("\t")
+          print(...)
         end
-        _G["mod"] = mod
+      end
+      _G["mod"] = mod
+    
+      local ok, err = pcall(function()
         local command, err = load(cmd)
         if command then
           command()
         else
           print("Failed to compile: " .. tostring(err))
         end
-        print = p
-        _G["mod"] = nil
       end)
       if not ok then
         client:send(tostring(err or "Unknown error!"))
         client:send("\n")
       end
+        print = p
+        _G["mod"] = nil
     end
   else 
     if Isaac.GetFrameCount() % 60 == 0 then
