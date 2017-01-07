@@ -75,11 +75,21 @@ function mod:update()
       _G["mod"] = mod
     
       local ok, err = pcall(function()
-        local command, err = load(cmd)
+        local command, err = load("return " .. cmd)
         if command then
-          command()
+          local data = command()
+          if data.type == "run" then
+            local script, err = load(data.code)
+            if script then
+              script()
+            else
+              print("Failed to compile code: " .. tostring(err))
+            end
+          else
+            print("Unkown data type: " .. tostring(data.type))
+          end
         else
-          print("Failed to compile: " .. tostring(err))
+          print("Failed to unpack data: " .. tostring(err))
         end
       end)
       if not ok then

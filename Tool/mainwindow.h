@@ -17,7 +17,9 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    void executeRemoteCode(QString const & code);
+    void sendRaw(QString message);
+
+    void executeRemoteCode(QString code);
 
     void log(QString const & message, QString const & category = "INFO");
 

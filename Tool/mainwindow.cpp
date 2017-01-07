@@ -80,20 +80,25 @@ void MainWindow::on_actionRun_triggered()
     this->executeRemoteCode(code);
 }
 
-void MainWindow::executeRemoteCode(const QString &code)
+void MainWindow::executeRemoteCode(QString code)
 {
-    QString prepped = code;
-
     // Prepare the code for transmittion: Replacing newlines with spaces,
     // because lua is awesome!
-    QByteArray data = prepped
-        .replace("\t", " ")
-        .replace("\n", " ")
+    QString prepped = code.replace("\'", "\\'").replace("\n", "\\n");
+
+    QString message = QString("{ type='run', code = '%1' }").arg(prepped);
+
+    this->sendRaw(message);
+
+}
+
+void MainWindow::sendRaw(QString message)
+{
+    QByteArray data = message
         .append('\n')
         .toUtf8();
 
-    qDebug() << "Execute" << QString::fromUtf8(data);
-
+    qDebug() << "Send" << message;
     for(QTcpSocket * sock : this->sockets)
     {
         sock->write(data);
