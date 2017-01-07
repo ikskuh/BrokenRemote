@@ -17,11 +17,16 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    void sendRaw(QString message);
-
     void executeRemoteCode(QString code);
 
     void log(QString const & message, QString const & category = "INFO");
+
+private:
+    void sendRaw(QString message);
+
+    void spawn(QString type, QString subtype, QString variant);
+
+    void loadPickups(QAction * action, QString fileName);
 
 private slots:
     void on_actionQuit_triggered();
@@ -79,6 +84,8 @@ private slots:
     void on_actionAdd_Dime_triggered();
 
     void on_actionReroll_Enemies_triggered();
+
+    void on_actionBattery_triggered();
 
 private:
     Ui::MainWindow *ui;

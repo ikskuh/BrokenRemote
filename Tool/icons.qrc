@@ -23,5 +23,12 @@
         <file>icons/collectibles.png</file>
         <file>icons/combined-heart.png</file>
         <file>icons/reroll-enemies.png</file>
+        <file>icons/battery.png</file>
+        <file>icons/card.png</file>
+        <file>icons/pedestal.png</file>
+        <file>icons/pill.png</file>
+        <file>icons/rune.png</file>
+        <file>icons/trinket.png</file>
+        <file>icons/pickup.png</file>
     </qresource>
 </RCC>

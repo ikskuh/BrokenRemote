@@ -111,10 +111,25 @@
      <addaction name="actionIncrease_Charge"/>
      <addaction name="actionDischarge"/>
     </widget>
+    <widget class="QMenu" name="menuSpawn_Pickup">
+     <property name="title">
+      <string>Spawn Pickup</string>
+     </property>
+     <property name="icon">
+      <iconset resource="icons.qrc">
+       <normaloff>:/icons/pickup.png</normaloff>:/icons/pickup.png</iconset>
+     </property>
+     <addaction name="actionCard"/>
+     <addaction name="actionPill"/>
+     <addaction name="actionRune"/>
+     <addaction name="actionTrinket"/>
+     <addaction name="actionItem"/>
+     <addaction name="actionBattery"/>
+    </widget>
     <addaction name="menuHearts"/>
     <addaction name="menuCollectibles"/>
     <addaction name="menuActive_Item"/>
-    <addaction name="actionItems"/>
+    <addaction name="menuSpawn_Pickup"/>
     <addaction name="actionReroll_Enemies"/>
    </widget>
    <widget class="QMenu" name="menuScript">
@@ -465,9 +480,58 @@
     <string>Reroll Enemies</string>
    </property>
   </action>
-  <action name="actionCards">
+  <action name="actionCard">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/card.png</normaloff>:/icons/card.png</iconset>
+   </property>
    <property name="text">
-    <string>Cards</string>
+    <string>Card</string>
+   </property>
+  </action>
+  <action name="actionPill">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/pill.png</normaloff>:/icons/pill.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pill</string>
+   </property>
+  </action>
+  <action name="actionRune">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/rune.png</normaloff>:/icons/rune.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rune</string>
+   </property>
+  </action>
+  <action name="actionItem">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/pedestal.png</normaloff>:/icons/pedestal.png</iconset>
+   </property>
+   <property name="text">
+    <string>Item</string>
+   </property>
+  </action>
+  <action name="actionTrinket">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/trinket.png</normaloff>:/icons/trinket.png</iconset>
+   </property>
+   <property name="text">
+    <string>Trinket</string>
+   </property>
+  </action>
+  <action name="actionBattery">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/battery.png</normaloff>:/icons/battery.png</iconset>
+   </property>
+   <property name="text">
+    <string>Battery</string>
    </property>
   </action>
  </widget>

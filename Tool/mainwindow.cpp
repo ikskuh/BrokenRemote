@@ -33,6 +33,12 @@ MainWindow::MainWindow(QWidget *parent) :
         this->log("Server cannot listen on port 12000, please check if another instance is still running.", "NETWORK");
     }
 
+    this->loadPickups(this->ui->actionCard, "Data/cards.csv");
+    this->loadPickups(this->ui->actionRune, "Data/runes.csv");
+    this->loadPickups(this->ui->actionPill, "Data/pills.csv");
+    this->loadPickups(this->ui->actionTrinket, "Data/trinkets.csv");
+    this->loadPickups(this->ui->actionItem, "Data/items.csv");
+
     // TODO: Implement correct MDI interface
     // Open a single window here.
     this->on_actionNew_triggered();
@@ -41,6 +47,12 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+
+void MainWindow::loadPickups(QAction * action, QString fileName)
+{
+    action->setEnabled(false);
 }
 
 void MainWindow::on_actionQuit_triggered()
@@ -89,7 +101,6 @@ void MainWindow::executeRemoteCode(QString code)
     QString message = QString("{ type='run', code = '%1' }").arg(prepped);
 
     this->sendRaw(message);
-
 }
 
 void MainWindow::sendRaw(QString message)
@@ -109,6 +120,19 @@ void MainWindow::log(const QString &message, const QString &category)
 {
     this->ui->log->appendPlainText("[" + category + "]\t" + message); // Adds the message to the widget
     this->ui->log->verticalScrollBar()->setValue(ui->log->verticalScrollBar()->maximum()); // Scrolls to the bottom
+}
+
+
+void MainWindow::spawn(QString type, QString subtype, QString variant)
+{
+    QString code(
+        "local p = Game():GetPlayer(0)\n"
+        "local r = Game():GetRoom()\n"
+        "local pos = r:FindFreePickupSpawnPosition(p.Position, 1.0, false)\n"
+        "Isaac.Spawn(%1, %2, %3, pos, Vector(0, 0), nil)\n"
+        "p:AnimateHappy()"
+        );
+    this->executeRemoteCode(code.arg(type, subtype, variant));
 }
 
 void MainWindow::on_clientConnected()
@@ -263,4 +287,9 @@ void MainWindow::on_actionAdd_Dime_triggered()
 void MainWindow::on_actionReroll_Enemies_triggered()
 {
     this->executeRemoteCode("for i,v in ipairs(Isaac.GetRoomEntities()) do local npc = v:ToNPC() if npc then Game():RerollEnemy(v) end end");
+}
+
+void MainWindow::on_actionBattery_triggered()
+{
+    this->spawn("EntityType.ENTITY_PICKUP", "PickupVariant.PICKUP_LIL_BATTERY", "0");
 }
