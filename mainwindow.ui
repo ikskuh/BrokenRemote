@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>702</width>
+    <height>528</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QFormLayout" name="formLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QMdiArea" name="mdiArea"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>702</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSave_As"/>
+    <addaction name="actionClose"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuGame">
+    <property name="title">
+     <string>Game</string>
+    </property>
+    <widget class="QMenu" name="menuHearts">
+     <property name="title">
+      <string>Hearts</string>
+     </property>
+     <addaction name="separator"/>
+     <addaction name="actionAdd_Half_Container"/>
+     <addaction name="actionAdd_Container"/>
+     <addaction name="separator"/>
+     <addaction name="actionAdd_Half_Red"/>
+     <addaction name="actionAdd_Red"/>
+     <addaction name="separator"/>
+     <addaction name="actionAdd_Half_Soul"/>
+     <addaction name="actionAdd_Soul"/>
+     <addaction name="separator"/>
+     <addaction name="actionAdd_Half_Black"/>
+     <addaction name="actionAdd_Black"/>
+     <addaction name="separator"/>
+     <addaction name="actionAdd_Eternal_Heart"/>
+     <addaction name="separator"/>
+     <addaction name="actionAdd_Golden_Heart"/>
+    </widget>
+    <addaction name="menuHearts"/>
+    <addaction name="actionCollectibles"/>
+    <addaction name="actionItems"/>
+   </widget>
+   <widget class="QMenu" name="menuScript">
+    <property name="title">
+     <string>Script</string>
+    </property>
+    <addaction name="actionRun"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuGame"/>
+   <addaction name="menuScript"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QDockWidget" name="logWidget">
+   <property name="windowTitle">
+    <string>System Log</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QGridLayout" name="gridLayout">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QPlainTextEdit" name="log">
+       <property name="acceptDrops">
+        <bool>false</bool>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(207, 207, 207);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOn</enum>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="plainText">
+        <string/>
+       </property>
+       <property name="backgroundVisible">
+        <bool>false</bool>
+       </property>
+       <property name="placeholderText">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="actionNew">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>New</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Open...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionSave_As">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Save As...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionCollectibles">
+   <property name="text">
+    <string>Collectibles</string>
+   </property>
+  </action>
+  <action name="actionItems">
+   <property name="text">
+    <string>Items</string>
+   </property>
+  </action>
+  <action name="actionAdd_Half_Red">
+   <property name="text">
+    <string>Add ½ Red</string>
+   </property>
+  </action>
+  <action name="actionAdd_Red">
+   <property name="text">
+    <string>Add Red</string>
+   </property>
+  </action>
+  <action name="actionAdd_Half_Soul">
+   <property name="text">
+    <string>Add ½ Soul</string>
+   </property>
+  </action>
+  <action name="actionAdd_Soul">
+   <property name="text">
+    <string>Add Soul</string>
+   </property>
+  </action>
+  <action name="actionAdd_Half_Black">
+   <property name="text">
+    <string>Add ½ Black</string>
+   </property>
+  </action>
+  <action name="actionAdd_Black">
+   <property name="text">
+    <string>Add Black</string>
+   </property>
+  </action>
+  <action name="actionAdd_Golden_Heart">
+   <property name="text">
+    <string>Add Golden Heart</string>
+   </property>
+  </action>
+  <action name="actionAdd_Eternal_Heart">
+   <property name="text">
+    <string>Add Eternal Heart</string>
+   </property>
+  </action>
+  <action name="actionRun">
+   <property name="text">
+    <string>Run</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionAdd_Half_Container">
+   <property name="text">
+    <string>Add ½ Heart Container</string>
+   </property>
+  </action>
+  <action name="actionAdd_Container">
+   <property name="text">
+    <string>Add Heart Container</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
