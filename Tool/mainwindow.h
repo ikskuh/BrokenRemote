@@ -11,6 +11,8 @@ namespace Ui {
 
 class QMdiSubWindow;
 
+class ScriptEditor;
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -30,13 +32,19 @@ private:
 
     void loadPickups(QMenu * menu, QString fileName, QString pickupVariant);
 
-    void on_pickupClick();
-
-    void openFile(QString fileName);
+    ScriptEditor * openFile(QString fileName);
 
     void renderWindowsMenu();
 
     void updateActions();
+
+    void loadTemplates();
+
+    void addTemplate(QString name, QString contents);
+
+    void on_createTemplateClick();
+
+    void on_pickupClick();
 
 private slots:
     void on_actionQuit_triggered();

@@ -1,10 +1,8 @@
 # TODO List
 
 - MDI Interface
-	- New/Save/Load/Close
 	- Window Arrangement
 	- Create file from template
-		- Active Item
 		- Passive Item
 		- Trinket
 		- Card

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>BrokenRemote</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QFormLayout" name="formLayout">
@@ -45,7 +45,14 @@
     <property name="title">
      <string>File</string>
     </property>
+    <widget class="QMenu" name="menuCreate">
+     <property name="title">
+      <string>Create</string>
+     </property>
+     <addaction name="actionBla"/>
+    </widget>
     <addaction name="actionNew"/>
+    <addaction name="menuCreate"/>
     <addaction name="actionOpen"/>
     <addaction name="actionSave"/>
     <addaction name="actionSave_As"/>
@@ -673,6 +680,14 @@
   <action name="actionPrevious">
    <property name="text">
     <string>Previous</string>
+   </property>
+  </action>
+  <action name="actionBla">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Bla</string>
    </property>
   </action>
  </widget>

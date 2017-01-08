@@ -36,11 +36,16 @@ MainWindow::MainWindow(QWidget *parent) :
     }
     qDebug() << QApplication::applicationDirPath();
 
+    ui->menuCreate->clear();
+    ui->menuCreate->setEnabled(false);
+
     this->loadPickups(this->ui->menuCard, "Data/cards.csv", "PickupVariant.PICKUP_TAROTCARD");
     this->loadPickups(this->ui->menuRune, "Data/runes.csv", "PickupVariant.PICKUP_TAROTCARD");
     this->loadPickups(this->ui->menuPill, "Data/pills.csv", "PickupVariant.PICKUP_PILL");
     this->loadPickups(this->ui->menuTrinket, "Data/trinkets.csv", "PickupVariant.PICKUP_TRINKET");
     this->loadPickups(this->ui->menuItem, "Data/items.csv", "PickupVariant.PICKUP_COLLECTIBLE");
+
+    this->loadTemplates();
 
     this->ui->mdiArea->setViewMode(QMdiArea::TabbedView);
 
@@ -118,7 +123,30 @@ void MainWindow::loadPickups(QMenu * menu, QString fileName, QString pickupVaria
     menu->setEnabled(menu->actions().count() > 0);
 }
 
-void MainWindow::openFile(QString fileName)
+void MainWindow::loadTemplates()
+{
+    QDir dir("./Templates/", "*.lua");
+    for(QFileInfo fileInfo : dir.entryInfoList(QDir::Files, QDir::Name))
+    {
+        QFile file(fileInfo.absoluteFilePath());
+        if(file.open(QFile::ReadOnly)) {
+            this->addTemplate(
+                fileInfo.baseName(),
+                QString::fromUtf8(file.readAll()));
+        }
+    }
+}
+
+void MainWindow::addTemplate(QString name, QString contents)
+{
+    QAction * action = this->ui->menuCreate->addAction(name);
+    action->setData(QVariant::fromValue(contents));
+    connect(action, &QAction::triggered, this, &MainWindow::on_createTemplateClick);
+
+    ui->menuCreate->setEnabled(true);
+}
+
+ScriptEditor * MainWindow::openFile(QString fileName)
 {
     ScriptEditor * edit = new ScriptEditor(fileName);
 
@@ -129,6 +157,18 @@ void MainWindow::openFile(QString fileName)
     connect(window, &QMdiSubWindow::destroyed, this, &MainWindow::renderWindowsMenu);
 
     this->renderWindowsMenu();
+
+    return edit;
+}
+
+void MainWindow::on_createTemplateClick()
+{
+    QAction * action = (QAction*)sender();
+    QString data = action->data().toString();
+
+    ScriptEditor *edit = this->openFile(QString());
+
+    edit->setPlainText(data);
 }
 
 void MainWindow::on_pickupClick()
@@ -411,7 +451,6 @@ void MainWindow::on_mdiArea_subWindowActivated(QMdiSubWindow *arg1)
 {
     this->updateActions();
 }
-
 
 void MainWindow::updateActions()
 {
