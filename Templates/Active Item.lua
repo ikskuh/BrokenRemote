@@ -22,11 +22,11 @@ function mod:MC_USE_ITEM(itemId, rng)
 
 	-- Spawn the item
 	Isaac.Spawn(
-			EntityType.ENTITY_PICKUP,
-			PickupVariant.PICKUP_COLLECTIBLE,
-			CollectibleType.COLLECTIBLE_BREAKFAST,
-			pos,
-			Vector(0,0),
-			nil)
+		EntityType.ENTITY_PICKUP,
+		PickupVariant.PICKUP_COLLECTIBLE,
+		CollectibleType.COLLECTIBLE_BREAKFAST,
+		pos,
+		Vector(0,0),
+		nil)
 	
 end

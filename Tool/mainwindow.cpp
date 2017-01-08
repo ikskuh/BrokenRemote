@@ -461,3 +461,55 @@ void MainWindow::updateActions()
     this->ui->actionSave_As->setEnabled(hasWindow);
     this->ui->actionClose->setEnabled(hasWindow);
 }
+
+void MainWindow::on_actionTry_open_devil_deal_triggered()
+{
+    this->executeRemoteCode("Game():GetRoom():TrySpawnDevilRoomDoor(true)");
+}
+
+void MainWindow::on_actionTry_open_boss_rush_door_triggered()
+{
+    this->executeRemoteCode("Game():GetRoom():TrySpawnBossRushDoor(true)");
+}
+
+void MainWindow::on_actionTry_open_mega_satan_triggered()
+{
+    // TODO: Does this really open the door? Maybe it's
+    // required to call more code...
+    this->executeRemoteCode("Game():GetRoom():TrySpawnMegaSatanRoomDoor()");
+}
+
+void MainWindow::on_actionOpen_The_Void_triggered()
+{
+    this->executeRemoteCode("Game():GetRoom():TrySpawnTheVoidDoor()");
+}
+
+void MainWindow::on_actionOpen_Blue_Womb_triggered()
+{
+    this->executeRemoteCode("Game():GetRoom():TrySpawnBlueWombDoor (true, true)");
+}
+
+void MainWindow::on_actionRestock_Shop_Partial_triggered()
+{
+    this->executeRemoteCode("Game():GetRoom()ShopRestockPartial()");
+}
+
+void MainWindow::on_actionRestock_Shop_Full_triggered()
+{
+    this->executeRemoteCode("Game():GetRoom():ShopRestockFull()");
+}
+
+void MainWindow::on_actionShuffle_Shop_triggered()
+{
+    this->executeRemoteCode("Game():GetRoom():ShopReshuffle(false, true)");
+}
+
+void MainWindow::on_actionRandom_Teleport_triggered()
+{
+    this->executeRemoteCode("Game():MoveToRandomRoom(true)");
+}
+
+void MainWindow::on_actionRandom_Teleport_No_Error_Room_triggered()
+{
+    this->executeRemoteCode("Game():MoveToRandomRoom(false)");
+}

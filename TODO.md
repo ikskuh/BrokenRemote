@@ -12,7 +12,8 @@
 	- Enemy List
 - Jump List
 	- Go to any level in the game
-- Room Tool
+	- Random Room
+- Test the Room Tool
 	- Open Devil Deal/Mega Satan/Boss Rush/Blue Womb/The Void
 	- Restock Shop (Full, Partial)
 	- Reshuffle Shop

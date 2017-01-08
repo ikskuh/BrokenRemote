@@ -113,6 +113,22 @@ private slots:
 
     void on_mdiArea_subWindowActivated(QMdiSubWindow *arg1);
 
+    void on_actionTry_open_devil_deal_triggered();
+
+    void on_actionTry_open_boss_rush_door_triggered();
+
+    void on_actionTry_open_mega_satan_triggered();
+
+    void on_actionOpen_The_Void_triggered();
+
+    void on_actionOpen_Blue_Womb_triggered();
+
+    void on_actionRestock_Shop_Partial_triggered();
+
+    void on_actionRestock_Shop_Full_triggered();
+
+    void on_actionShuffle_Shop_triggered();
+
 private:
     Ui::MainWindow *ui;
     QTcpServer * server;

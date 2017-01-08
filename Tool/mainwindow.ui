@@ -167,7 +167,10 @@
     <addaction name="menuCollectibles"/>
     <addaction name="menuActive_Item"/>
     <addaction name="menuSpawn_Pickup"/>
+    <addaction name="separator"/>
     <addaction name="actionReroll_Enemies"/>
+    <addaction name="actionReroll_Floor_Pickups"/>
+    <addaction name="actionReroll_Floor_Collectibles"/>
    </widget>
    <widget class="QMenu" name="menuScript">
     <property name="title">
@@ -186,8 +189,33 @@
     <addaction name="actionPrevious"/>
     <addaction name="separator"/>
    </widget>
+   <widget class="QMenu" name="menuRoom">
+    <property name="title">
+     <string>Room</string>
+    </property>
+    <widget class="QMenu" name="menuJump_to">
+     <property name="title">
+      <string>Jump to</string>
+     </property>
+     <addaction name="actionStage_Template"/>
+    </widget>
+    <addaction name="actionTry_open_devil_deal"/>
+    <addaction name="actionTry_open_boss_rush_door"/>
+    <addaction name="actionTry_open_mega_satan"/>
+    <addaction name="actionOpen_The_Void"/>
+    <addaction name="actionOpen_Blue_Womb"/>
+    <addaction name="separator"/>
+    <addaction name="actionRestock_Shop_Partial"/>
+    <addaction name="actionRestock_Shop_Full"/>
+    <addaction name="actionShuffle_Shop"/>
+    <addaction name="separator"/>
+    <addaction name="menuJump_to"/>
+    <addaction name="actionRandom_Teleport"/>
+    <addaction name="actionRandom_Teleport_No_Error_Room"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuGame"/>
+   <addaction name="menuRoom"/>
    <addaction name="menuScript"/>
    <addaction name="menuWindows"/>
   </widget>
@@ -216,6 +244,9 @@
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QDockWidget" name="logWidget">
+   <property name="features">
+    <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
+   </property>
    <property name="windowTitle">
     <string>System Log</string>
    </property>
@@ -688,6 +719,74 @@
    </property>
    <property name="text">
     <string>Bla</string>
+   </property>
+  </action>
+  <action name="actionTry_open_devil_deal">
+   <property name="text">
+    <string>Open 'Devil Deal'</string>
+   </property>
+  </action>
+  <action name="actionTry_open_boss_rush_door">
+   <property name="text">
+    <string>Open 'Boss Rush'</string>
+   </property>
+  </action>
+  <action name="actionTry_open_mega_satan">
+   <property name="text">
+    <string>Open 'Mega Satan'</string>
+   </property>
+  </action>
+  <action name="actionOpen_The_Void">
+   <property name="text">
+    <string>Open 'The Void'</string>
+   </property>
+  </action>
+  <action name="actionOpen_Blue_Womb">
+   <property name="text">
+    <string>Open 'Blue Womb'</string>
+   </property>
+  </action>
+  <action name="actionRestock_Shop_Partial">
+   <property name="text">
+    <string>Restock Shop (Partial)</string>
+   </property>
+  </action>
+  <action name="actionRestock_Shop_Full">
+   <property name="text">
+    <string>Restock Shop (Full)</string>
+   </property>
+  </action>
+  <action name="actionShuffle_Shop">
+   <property name="text">
+    <string>Shuffle Shop</string>
+   </property>
+  </action>
+  <action name="actionReroll_Floor_Pickups">
+   <property name="text">
+    <string>Reroll Floor Pickups</string>
+   </property>
+  </action>
+  <action name="actionReroll_Floor_Collectibles">
+   <property name="text">
+    <string>Reroll Floor Collectibles</string>
+   </property>
+  </action>
+  <action name="actionStage_Template">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Stage Template</string>
+   </property>
+  </action>
+  <action name="actionRandom_Teleport">
+   <property name="text">
+    <string>Random Teleport</string>
+   </property>
+  </action>
+  <action name="actionRandom_Teleport_No_Error_Room">
+   <property name="text">
+    <string>Random Teleport (No Error Room)</string>
    </property>
   </action>
  </widget>
