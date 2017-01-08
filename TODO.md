@@ -1,7 +1,6 @@
 # TODO List
 
 - MDI Interface
-	- Window Arrangement
 	- Create file from template
 		- Passive Item
 		- Trinket
@@ -10,9 +9,6 @@
 - Provide some experimental items
   - Pill
   - Card
-- Spawn Enemy
-	- Spawn System
-	- Enemy List
 - Jump List
 	- Go to any level in the game
 - Test the Room Tool

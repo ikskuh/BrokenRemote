@@ -1,6 +1,13 @@
 # BrokenRemote
-A remote debugging tool for The Binding of Isaac: Afterbirth+
+BrokenRemote is a remote Lua code injector. This means, you can type some code in the tool, hit a
+key and the code will be executed in the game **instantaneously**.
 
+This allows a dev to prototype and create mods much faster than reloading a mod by using
+the `luamod` command repeatedly. The tool also provides a vast set of predefined actions
+that modify the current game state like spawning enemies, pedestal items, pickups, ...
+
+It also provides 12 experimental items (4 active, 4 passive, 4 trinkets) that can be used
+to prototype custom item ideas without the need of putting the items into the game first.
 
 ## Screenshots
 
@@ -100,7 +107,8 @@ The mod features some items that can be used to implement your dream mod:
 
 ## The game is always paused, when I'm in the tool. Is there a way to prevent this?
 
-The game is paused whenever it has lost its focus. You can prevent this by editing the file named `options.ini` located in ` %USERPROFILE%\Documents\My Games\Binding of Isaac Afterbirth+`. `%USERPROFILE%` is an environmental variable that should point to your users profile directory.
+The game is paused whenever it has lost its focus. You can prevent this by editing
+the file named `options.ini` located in `%USERPROFILE%\Documents\My Games\Binding of Isaac Afterbirth+`. `%USERPROFILE%` is an environmental variable that should point to your users profile directory.
 
 You have to change the line containing:
 
@@ -113,3 +121,44 @@ to this one:
 ```
 PauseOnFocusLost=0
 ``` 
+
+## The "Connected" text is actually "Disconnected" and my game lags
+This happens when **BrokenRemote** is not running. The game will then search for the
+tool once every second and this is what causes the lagging.
+
+Just start **BrokenRemote** or disable the mod if you don't want to develop this mod
+right now.
+
+## The "Connected" text does not appear
+This can happen because of several reasons:
+
+1. Make sure the game was started with the console option `--luadebug`
+2. Make sure the mod has been loaded by the game in the "Mods" menu.
+3. Make sure **BrokenRemote** is running
+
+If none of the above helps, please file a GitHub issue and append your game log file.
+This can be found here:
+
+```
+  %USERPROFILE%\Documents\My Games\Binding of Isaac Afterbirth+
+```
+
+## The "Open ***-Door" doesn't do anything
+Yes, this is a known problem. I don't know what those functions do in particular, as the button
+only calls `Game():GetRoom():TrySpawnDevilRoomDoor(...)` or similar.
+
+If somebody knows more, please send me a message!
+
+## Using *Mod Active 1* doesn't do anything
+Those items don't do anything until you infuse them with some code.
+Create a new script based on the *Active Item* template, hit **Ctrl+R**,
+then use the item again. It should now spawn a *Breakfast* pedestal near
+the player.
+
+## The mod appears broken in the mod list
+Yes, this happens from time to time. Open the mod folder, delete the `.it` files,
+then restart the game.
+
+It happens because the mod will executy any code that is send to it. This code may
+be broken or use outdated APIs and if so, the game will flag the mod as broken or
+outdated. Just ignore it and delete those files.
