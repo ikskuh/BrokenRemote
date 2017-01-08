@@ -32,13 +32,103 @@
     </item>
    </layout>
   </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew"/>
+   <addaction name="actionOpen"/>
+   <addaction name="actionSave"/>
+   <addaction name="separator"/>
+   <addaction name="actionRun"/>
+   <addaction name="separator"/>
+   <addaction name="actionAdd_Red"/>
+   <addaction name="actionAdd_Soul"/>
+   <addaction name="actionAdd_Black"/>
+   <addaction name="separator"/>
+   <addaction name="actionAdd_Dime"/>
+   <addaction name="actionAdd_Golden_Bomb"/>
+   <addaction name="actionAdd_Golden_Key"/>
+   <addaction name="separator"/>
+   <addaction name="actionDischarge"/>
+   <addaction name="actionIncrease_Charge"/>
+   <addaction name="actionFull_Charge"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QDockWidget" name="logWidget">
+   <property name="features">
+    <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
+   </property>
+   <property name="windowTitle">
+    <string>System Log</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QGridLayout" name="gridLayout">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QPlainTextEdit" name="log">
+       <property name="acceptDrops">
+        <bool>false</bool>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(207, 207, 207);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOn</enum>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="plainText">
+        <string/>
+       </property>
+       <property name="backgroundVisible">
+        <bool>false</bool>
+       </property>
+       <property name="placeholderText">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>702</width>
-     <height>19</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -130,11 +220,19 @@
       <property name="title">
        <string>Card</string>
       </property>
+      <property name="icon">
+       <iconset resource="icons.qrc">
+        <normaloff>:/icons/card.png</normaloff>:/icons/card.png</iconset>
+      </property>
       <addaction name="actionEmpty"/>
      </widget>
      <widget class="QMenu" name="menuPill">
       <property name="title">
        <string>Pill</string>
+      </property>
+      <property name="icon">
+       <iconset resource="icons.qrc">
+        <normaloff>:/icons/pill.png</normaloff>:/icons/pill.png</iconset>
       </property>
       <addaction name="actionEmpty_2"/>
      </widget>
@@ -142,17 +240,29 @@
       <property name="title">
        <string>Rune</string>
       </property>
+      <property name="icon">
+       <iconset resource="icons.qrc">
+        <normaloff>:/icons/rune.png</normaloff>:/icons/rune.png</iconset>
+      </property>
       <addaction name="actionEmpty_3"/>
      </widget>
      <widget class="QMenu" name="menuTrinket">
       <property name="title">
        <string>Trinket</string>
       </property>
+      <property name="icon">
+       <iconset resource="icons.qrc">
+        <normaloff>:/icons/trinket.png</normaloff>:/icons/trinket.png</iconset>
+      </property>
       <addaction name="actionEmpty_4"/>
      </widget>
      <widget class="QMenu" name="menuItem">
       <property name="title">
        <string>Item</string>
+      </property>
+      <property name="icon">
+       <iconset resource="icons.qrc">
+        <normaloff>:/icons/pedestal.png</normaloff>:/icons/pedestal.png</iconset>
       </property>
       <addaction name="actionEmpty_5"/>
      </widget>
@@ -177,17 +287,6 @@
      <string>Script</string>
     </property>
     <addaction name="actionRun"/>
-   </widget>
-   <widget class="QMenu" name="menuWindows">
-    <property name="title">
-     <string>Windows</string>
-    </property>
-    <addaction name="actionTile"/>
-    <addaction name="actionCascade"/>
-    <addaction name="separator"/>
-    <addaction name="actionNext"/>
-    <addaction name="actionPrevious"/>
-    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menuRoom">
     <property name="title">
@@ -223,96 +322,7 @@
    <addaction name="menuGame"/>
    <addaction name="menuRoom"/>
    <addaction name="menuScript"/>
-   <addaction name="menuWindows"/>
    <addaction name="menuOptions"/>
-  </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>true</bool>
-   </attribute>
-   <addaction name="actionNew"/>
-   <addaction name="actionOpen"/>
-   <addaction name="actionSave"/>
-   <addaction name="separator"/>
-   <addaction name="actionAdd_Red"/>
-   <addaction name="actionAdd_Soul"/>
-   <addaction name="actionAdd_Black"/>
-   <addaction name="separator"/>
-   <addaction name="actionAdd_Dime"/>
-   <addaction name="actionAdd_Golden_Bomb"/>
-   <addaction name="actionAdd_Golden_Key"/>
-   <addaction name="separator"/>
-   <addaction name="actionDischarge"/>
-   <addaction name="actionIncrease_Charge"/>
-   <addaction name="actionFull_Charge"/>
-  </widget>
-  <widget class="QStatusBar" name="statusBar"/>
-  <widget class="QDockWidget" name="logWidget">
-   <property name="features">
-    <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
-   </property>
-   <property name="windowTitle">
-    <string>System Log</string>
-   </property>
-   <attribute name="dockWidgetArea">
-    <number>8</number>
-   </attribute>
-   <widget class="QWidget" name="dockWidgetContents">
-    <layout class="QGridLayout" name="gridLayout">
-     <property name="leftMargin">
-      <number>0</number>
-     </property>
-     <property name="topMargin">
-      <number>0</number>
-     </property>
-     <property name="rightMargin">
-      <number>0</number>
-     </property>
-     <property name="bottomMargin">
-      <number>0</number>
-     </property>
-     <item row="0" column="0">
-      <widget class="QPlainTextEdit" name="log">
-       <property name="acceptDrops">
-        <bool>false</bool>
-       </property>
-       <property name="autoFillBackground">
-        <bool>false</bool>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(207, 207, 207);</string>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::NoFrame</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
-       </property>
-       <property name="lineWidth">
-        <number>0</number>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOn</enum>
-       </property>
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-       <property name="plainText">
-        <string/>
-       </property>
-       <property name="backgroundVisible">
-        <bool>false</bool>
-       </property>
-       <property name="placeholderText">
-        <string/>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
   </widget>
   <action name="actionNew">
    <property name="enabled">
@@ -700,26 +710,6 @@
     <string>Empty</string>
    </property>
   </action>
-  <action name="actionTile">
-   <property name="text">
-    <string>Tile</string>
-   </property>
-  </action>
-  <action name="actionCascade">
-   <property name="text">
-    <string>Cascade</string>
-   </property>
-  </action>
-  <action name="actionNext">
-   <property name="text">
-    <string>Next</string>
-   </property>
-  </action>
-  <action name="actionPrevious">
-   <property name="text">
-    <string>Previous</string>
-   </property>
-  </action>
   <action name="actionBla">
    <property name="enabled">
     <bool>false</bool>
@@ -729,6 +719,10 @@
    </property>
   </action>
   <action name="actionTry_open_devil_deal">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/devildeal.png</normaloff>:/icons/devildeal.png</iconset>
+   </property>
    <property name="text">
     <string>Open 'Devil Deal'</string>
    </property>
@@ -739,6 +733,10 @@
    </property>
   </action>
   <action name="actionTry_open_mega_satan">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/megasatan.png</normaloff>:/icons/megasatan.png</iconset>
+   </property>
    <property name="text">
     <string>Open 'Mega Satan'</string>
    </property>
@@ -759,23 +757,45 @@
    </property>
   </action>
   <action name="actionRestock_Shop_Full">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/restock.png</normaloff>:/icons/restock.png</iconset>
+   </property>
    <property name="text">
     <string>Restock Shop (Full)</string>
    </property>
   </action>
   <action name="actionShuffle_Shop">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/shuffle-shop.png</normaloff>:/icons/shuffle-shop.png</iconset>
+   </property>
    <property name="text">
     <string>Shuffle Shop</string>
    </property>
   </action>
   <action name="actionReroll_Floor_Pickups">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/reroll-collectibles.png</normaloff>:/icons/reroll-collectibles.png</iconset>
+   </property>
    <property name="text">
     <string>Reroll Floor Pickups</string>
    </property>
+   <property name="toolTip">
+    <string>Reroll Floor Pickups (Money, Pills, ...)</string>
+   </property>
   </action>
   <action name="actionReroll_Floor_Collectibles">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/reroll-pedestal.png</normaloff>:/icons/reroll-pedestal.png</iconset>
+   </property>
    <property name="text">
     <string>Reroll Floor Collectibles</string>
+   </property>
+   <property name="toolTip">
+    <string>Reroll Floor Collectibles (Items)</string>
    </property>
   </action>
   <action name="actionStage_Template">
@@ -787,6 +807,10 @@
    </property>
   </action>
   <action name="actionRandom_Teleport">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/teleport.png</normaloff>:/icons/teleport.png</iconset>
+   </property>
    <property name="text">
     <string>Random Teleport</string>
    </property>

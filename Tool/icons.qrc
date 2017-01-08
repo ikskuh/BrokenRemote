@@ -35,5 +35,12 @@
         <file>icons/document-save-as.png</file>
         <file>icons/document-save.png</file>
         <file>icons/window-close.png</file>
+        <file>icons/devildeal.png</file>
+        <file>icons/megasatan.png</file>
+        <file>icons/restock.png</file>
+        <file>icons/shuffle-shop.png</file>
+        <file>icons/teleport.png</file>
+        <file>icons/reroll-collectibles.png</file>
+        <file>icons/reroll-pedestal.png</file>
     </qresource>
 </RCC>

@@ -544,3 +544,8 @@ void MainWindow::on_actionAbout_triggered()
         "Some new line\n"
         "Bla Blipp");
 }
+
+void MainWindow::on_actionTile_triggered()
+{
+    this->ui->mdiArea->tileSubWindows();
+}
