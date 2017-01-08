@@ -107,6 +107,10 @@ void MainWindow::loadPickups(QMenu * menu, QString fileName, QString pickupVaria
     while(file.atEnd() == false)
     {
         QString line = QString::fromUtf8(file.readLine()).trimmed();
+        if(line == "--") {
+            menu->addSeparator();
+            continue;
+        }
         QStringList options = line.split('\t');
         if(options.length() != 2)
             continue;
@@ -152,6 +156,10 @@ void MainWindow::loadEnemies()
     while(file.atEnd() == false)
     {
         QString line = QString::fromUtf8(file.readLine()).trimmed();
+        if(line == "--") {
+            this->ui->menuSpawn_Enemy->addSeparator();
+            continue;
+        }
         QStringList options = line.split('\t');
         if(options.length() != 4)
             continue;

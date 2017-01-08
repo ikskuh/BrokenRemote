@@ -1,65 +1,47 @@
+Fly	EntityType.ENTITY_FLY	0	0
+Attack Fly	EntityType.ENTITY_ATTACKFLY	0	0
 Rage Creep	EntityType.ENTITY_RAGE_CREEP	0	0
-Blastocyst (Small)	EntityType.ENTITY_BLASTOCYST_SMALL	0	0
-Blastocyst (Medium)	EntityType.ENTITY_BLASTOCYST_MEDIUM	0	0
-Blastocyst (Big)	EntityType.ENTITY_BLASTOCYST_BIG	0	0
-Mr Maw	EntityType.ENTITY_MRMAW	0	0
 Fatty	EntityType.ENTITY_FATTY	0	0
 Boil	EntityType.ENTITY_BOIL	0	0
-Forsaken	EntityType.ENTITY_FORSAKEN	0	0
 Tumor	EntityType.ENTITY_TUMOR	0	0
 Psy Tumor	EntityType.ENTITY_PSY_TUMOR	0	0
-Little Horn	EntityType.ENTITY_LITTLE_HORN	0	0
-Gurdy	EntityType.ENTITY_GURDY	0	0
-Cage	EntityType.ENTITY_CAGE	0	0
 Boom Fly	EntityType.ENTITY_BOOMFLY	0	0
 Leaper	EntityType.ENTITY_LEAPER	0	0
-Mega Fatty	EntityType.ENTITY_MEGA_FATTY	0	0
 Hopper	EntityType.ENTITY_HOPPER	0	0
 Mobile Host	EntityType.ENTITY_MOBILE_HOST	0	0
 Flesh Mobile Host	EntityType.ENTITY_FLESH_MOBILE_HOST	0	0
-Peep	EntityType.ENTITY_PEEP	0	0
-Dingle	EntityType.ENTITY_DINGLE	0	0
 Black Globin	EntityType.ENTITY_BLACK_GLOBIN	0	0
 Black Globin Head	EntityType.ENTITY_BLACK_GLOBIN_HEAD	0	0
 Black Globin Body	EntityType.ENTITY_BLACK_GLOBIN_BODY	0	0
 Camillo Jr	EntityType.ENTITY_CAMILLO_JR	0	0
 Pitfall	EntityType.ENTITY_PITFALL	0	0
 Baby	EntityType.ENTITY_BABY	0	0
-Daddy Long Legs	EntityType.ENTITY_DADDYLONGLEGS	0	0
 Squit	EntityType.ENTITY_SQUIRT	0	0
 Para Bite	EntityType.ENTITY_PARA_BITE	0	0
 Dart Fly	EntityType.ENTITY_DART_FLY	0	0
-Satan	EntityType.ENTITY_SATAN	0	0
 Shop Keeper	EntityType.ENTITY_SHOPKEEPER	0	0
 Baby Long Legs	EntityType.ENTITY_BABY_LONG_LEGS	0	0
 Maw	EntityType.ENTITY_MAW	0	0
+Mr Maw	EntityType.ENTITY_MRMAW	0	0
+Black Maw	EntityType.ENTITY_BLACK_MAW	0	0
+Gaping Maw	EntityType.ENTITY_GAPING_MAW	0	0
+Broken Gaping Maw	EntityType.ENTITY_BROKEN_GAPING_MAW	0	0
 Round Worm	EntityType.ENTITY_ROUND_WORM	0	0
 Heart	EntityType.ENTITY_HEART	0	0
 Horseman Head	EntityType.ENTITY_HORSEMAN_HEAD	0	0
 Gurgle	EntityType.ENTITY_GURGLE	0	0
 Mask	EntityType.ENTITY_MASK	0	0
-Gabriel	EntityType.ENTITY_GABRIEL	0	0
 Sucker	EntityType.ENTITY_SUCKER	0	0
-Pin	EntityType.ENTITY_PIN	0	0
 Nest	EntityType.ENTITY_NEST	0	0
-Sloth	EntityType.ENTITY_SLOTH	0	0
-Mega Maw	EntityType.ENTITY_MEGA_MAW	0	0
 Moms Dead Hand	EntityType.ENTITY_MOMS_DEAD_HAND	0	0
-Polycephalus	EntityType.ENTITY_POLYCEPHALUS	0	0
-Hush (Skinless)	EntityType.ENTITY_HUSH_SKINLESS	0	0
 Conjoined Spitty	EntityType.ENTITY_CONJOINED_SPITTY	0	0
 Roundy	EntityType.ENTITY_ROUNDY	0	0
 Grub	EntityType.ENTITY_GRUB	0	0
-Ultra Greed	EntityType.ENTITY_ULTRA_GREED	0	0
 Stone Eye	EntityType.ENTITY_STONE_EYE	0	0
-Deaths Head	EntityType.ENTITY_DEATHS_HEAD	0	0
-Brownie	EntityType.ENTITY_BROWNIE	0	0
 Swarm	EntityType.ENTITY_SWARM	0	0
 Greed Gaper	EntityType.ENTITY_GREED_GAPER	0	0
-Vis	EntityType.ENTITY_VIS	0	0
 Stonehead	EntityType.ENTITY_STONEHEAD	0	0
 Clotty	EntityType.ENTITY_CLOTTY	0	0
-Broken Gaping Maw	EntityType.ENTITY_BROKEN_GAPING_MAW	0	0
 Slot	EntityType.ENTITY_SLOT	0	0
 Fireplace	EntityType.ENTITY_FIREPLACE	0	0
 Hush Gaper	EntityType.ENTITY_HUSH_GAPER	0	0
@@ -68,11 +50,6 @@ Keeper	EntityType.ENTITY_KEEPER	0	0
 Eye	EntityType.ENTITY_EYE	0	0
 Embryo	EntityType.ENTITY_EMBRYO	0	0
 Red Ghost	EntityType.ENTITY_RED_GHOST	0	0
-Fistula (Small)	EntityType.ENTITY_FISTULA_SMALL	0	0
-Fistula (Medium)	EntityType.ENTITY_FISTULA_MEDIUM	0	0
-Fistula (Big)	EntityType.ENTITY_FISTULA_BIG	0	0
-Lust	EntityType.ENTITY_LUST	0	0
-Greed	EntityType.ENTITY_GREED	0	0
 Corn Mine	EntityType.ENTITY_CORN_MINE	0	0
 Maggot	EntityType.ENTITY_MAGGOT	0	0
 Ultra Coin	EntityType.ENTITY_ULTRA_COIN	0	0
@@ -85,9 +62,7 @@ Fred	EntityType.ENTITY_FRED	0	0
 Fat Bat	EntityType.ENTITY_FAT_BAT	0	0
 Flaming Hopper	EntityType.ENTITY_FLAMINGHOPPER	0	0
 Chub	EntityType.ENTITY_CHUB	0	0
-Leecg	EntityType.ENTITY_LEECH	0	0
-Fly	EntityType.ENTITY_FLY	0	0
-Attack Fly	EntityType.ENTITY_ATTACKFLY	0	0
+Leech	EntityType.ENTITY_LEECH	0	0
 Homunculus	EntityType.ENTITY_HOMUNCULUS	0	0
 Gusher	EntityType.ENTITY_GUSHER	0	0
 Oob	EntityType.ENTITY_OOB	0	0
@@ -96,61 +71,40 @@ Cyclopia	EntityType.ENTITY_CYCLOPIA	0	0
 Bone Knight	EntityType.ENTITY_BONE_KNIGHT	0	0
 Gaper	EntityType.ENTITY_GAPER	0	0
 Dinga	EntityType.ENTITY_DINGA	0	0
-Mega Satan	EntityType.ENTITY_MEGA_SATAN	0	0
 Stain	EntityType.ENTITY_STAIN	0	0
 Rag Man	EntityType.ENTITY_RAG_MAN	0	0
 Skinny	EntityType.ENTITY_SKINNY	0	0
 Bony	EntityType.ENTITY_BONY	0	0
 Black Bony	EntityType.ENTITY_BLACK_BONY	0	0
-Hush	EntityType.ENTITY_HUSH	0	0
-Death	EntityType.ENTITY_DEATH	0	0
 Spider	EntityType.ENTITY_SPIDER	0	0
 Blubber	EntityType.ENTITY_BLUBBER	0	0
 Poky	EntityType.ENTITY_POKY	0	0
 Brain	EntityType.ENTITY_BRAIN	0	0
-Widow	EntityType.ENTITY_WIDOW	0	0
-Pestilence	EntityType.ENTITY_PESTILENCE	0	0
-Famine	EntityType.ENTITY_FAMINE	0	0
-War	EntityType.ENTITY_WAR	0	0
 Horf	EntityType.ENTITY_HORF	0	0
 Guts	EntityType.ENTITY_GUTS	0	0
 Mulligan	EntityType.ENTITY_MULLIGAN	0	0
-Wrath	EntityType.ENTITY_WRATH	0	0
-Uriel	EntityType.ENTITY_URIEL	0	0
 Floating Knight	EntityType.ENTITY_FLOATING_KNIGHT	0	0
-Dark One	EntityType.ENTITY_DARK_ONE	0	0
 Swinger	EntityType.ENTITY_SWINGER	0	0
-Mama Gurdy	EntityType.ENTITY_MAMA_GURDY	0	0
-Mom	EntityType.ENTITY_MOM	0	0
-The Gate	EntityType.ENTITY_GATE	0	0
-The Haunt	EntityType.ENTITY_THE_HAUNT	0	0
-Black Maw	EntityType.ENTITY_BLACK_MAW	0	0
 Spider (L2)	EntityType.ENTITY_SPIDER_L2	0	0
 Conjoined Fatty	EntityType.ENTITY_CONJOINED_FATTY	0	0
 Imp	EntityType.ENTITY_IMP	0	0
 Night Crawler	EntityType.ENTITY_NIGHT_CRAWLER	0	0
 Skinball	EntityType.ENTITY_SKINBALL	0	0
-Adversary	EntityType.ENTITY_ADVERSARY	0	0
 Nulls	EntityType.ENTITY_NULLS	0	0
 Knight	EntityType.ENTITY_KNIGHT	0	0
 Host	EntityType.ENTITY_HOST	0	0
 Spider (Big)	EntityType.ENTITY_BIGSPIDER	0	0
-Monstro 2	EntityType.ENTITY_MONSTRO2	0	0
 Begotten	EntityType.ENTITY_BEGOTTEN	0	0
-Mom (Head)	EntityType.ENTITY_MOM_HEAD	0	0
 Ticking Spider	EntityType.ENTITY_TICKING_SPIDER	0	0
 Full Fly	EntityType.ENTITY_FULL_FLY	0	0
-Loki	EntityType.ENTITY_LOKI	0	0
 Poop	EntityType.ENTITY_POOP	0	0
 Blind Creep	EntityType.ENTITY_BLIND_CREEP	0	0
 Half Sack	EntityType.ENTITY_HALF_SACK	0	0
 Wall Creep	EntityType.ENTITY_WALL_CREEP	0	0
 Hive	EntityType.ENTITY_HIVE	0	0
-Larry Jr	EntityType.ENTITY_LARRYJR	0	0
 Gurgling	EntityType.ENTITY_GURGLING	0	0
 Splasher	EntityType.ENTITY_SPLASHER	0	0
 Hush Boil	EntityType.ENTITY_HUSH_BOIL	0	0
-Gaping Maw	EntityType.ENTITY_GAPING_MAW	0	0
 One Tooth	EntityType.ENTITY_ONE_TOOTH	0	0
 Nerve Ending	EntityType.ENTITY_NERVE_ENDING	0	0
 Flesh Deaths Head	EntityType.ENTITY_FLESH_DEATHS_HEAD	0	0
@@ -160,36 +114,89 @@ Eternal Fly	EntityType.ENTITY_ETERNALFLY	0	0
 Cod Worm	EntityType.ENTITY_COD_WORM	0	0
 Wizoob	EntityType.ENTITY_WIZOOB	0	0
 Fat Sack	EntityType.ENTITY_FAT_SACK	0	0
-Mega Satan 2	EntityType.ENTITY_MEGA_SATAN_2	0	0
 Moms Hand	EntityType.ENTITY_MOMS_HAND	0	0
 Fly (L2)	EntityType.ENTITY_FLY_L2	0	0
 Wall Hugger	EntityType.ENTITY_WALL_HUGGER	0	0
-The Fallen	EntityType.ENTITY_FALLEN	0	0
 Spity	EntityType.ENTITY_SPITY	0	0
 Hush Fly	EntityType.ENTITY_HUSH_FLY	0	0
 Brimstone Head	EntityType.ENTITY_BRIMSTONE_HEAD	0	0
 Constant Stone Shooter	EntityType.ENTITY_CONSTANT_STONE_SHOOTER	0	0
-Isaac	EntityType.ENTITY_ISAAC	0	0
-Headless Horseman	EntityType.ENTITY_HEADLESS_HORSEMAN	0	0
 Lump	EntityType.ENTITY_LUMP	0	0
-The Lamb	EntityType.ENTITY_THE_LAMB	0	0
 Gurdy Jr	EntityType.ENTITY_GURDY_JR	0	0
-Heart of Infamy	EntityType.ENTITY_HEART_OF_INFAMY	0	0
-Mask of Infamy	EntityType.ENTITY_MASK_OF_INFAMY	0	0
 Swarmer	EntityType.ENTITY_SWARMER	0	0
 Hanger	EntityType.ENTITY_HANGER	0	0
 Buttlicker	EntityType.ENTITY_BUTTLICKER	0	0
 Moter	EntityType.ENTITY_MOTER	0	0
-Gemini	EntityType.ENTITY_GEMINI	0	0
 Duke	EntityType.ENTITY_DUKE	0	0
 Crazy Long Legs	EntityType.ENTITY_CRAZY_LONG_LEGS	0	0
-Mom's Heart	EntityType.ENTITY_MOMS_HEART	0	0
 Ragling	EntityType.ENTITY_RAGLING	0	0
-Mr. Fred	EntityType.ENTITY_MR_FRED	0	0
 Charger	EntityType.ENTITY_CHARGER	0	0
-Pride	EntityType.ENTITY_PRIDE	0	0
-Envy	EntityType.ENTITY_ENVY	0	0
-Gluttony	EntityType.ENTITY_GLUTTONY	0	0
 Globin	EntityType.ENTITY_GLOBIN	0	0
 Membrain	EntityType.ENTITY_MEMBRAIN	0	0
 Pooter	EntityType.ENTITY_POOTER	0	0
+--
+Headless Horseman	EntityType.ENTITY_HEADLESS_HORSEMAN	0	0
+Pestilence	EntityType.ENTITY_PESTILENCE	0	0
+Famine	EntityType.ENTITY_FAMINE	0	0
+War	EntityType.ENTITY_WAR	0	0
+Death	EntityType.ENTITY_DEATH	0	0
+Deaths Head	EntityType.ENTITY_DEATHS_HEAD	0	0
+--
+Gluttony	EntityType.ENTITY_GLUTTONY	0	0
+Pride	EntityType.ENTITY_PRIDE	0	0
+Envy	EntityType.ENTITY_ENVY	0	0
+Sloth	EntityType.ENTITY_SLOTH	0	0
+Lust	EntityType.ENTITY_LUST	0	0
+Greed	EntityType.ENTITY_GREED	0	0
+Wrath	EntityType.ENTITY_WRATH	0	0
+--
+Gabriel	EntityType.ENTITY_GABRIEL	0	0
+Uriel	EntityType.ENTITY_URIEL	0	0
+--
+Blastocyst (Small)	EntityType.ENTITY_BLASTOCYST_SMALL	0	0
+Blastocyst (Medium)	EntityType.ENTITY_BLASTOCYST_MEDIUM	0	0
+Blastocyst (Big)	EntityType.ENTITY_BLASTOCYST_BIG	0	0
+--
+Fistula (Small)	EntityType.ENTITY_FISTULA_SMALL	0	0
+Fistula (Medium)	EntityType.ENTITY_FISTULA_MEDIUM	0	0
+Fistula (Big)	EntityType.ENTITY_FISTULA_BIG	0	0
+--
+Larry Jr	EntityType.ENTITY_LARRYJR	0	0
+Pin	EntityType.ENTITY_PIN	0	0
+Widow	EntityType.ENTITY_WIDOW	0	0
+Gemini	EntityType.ENTITY_GEMINI	0	0
+Loki	EntityType.ENTITY_LOKI	0	0
+Polycephalus	EntityType.ENTITY_POLYCEPHALUS	0	0
+Mega Maw	EntityType.ENTITY_MEGA_MAW	0	0
+Forsaken	EntityType.ENTITY_FORSAKEN	0	0
+Brownie	EntityType.ENTITY_BROWNIE	0	0
+Vis	EntityType.ENTITY_VIS	0	0
+The Fallen	EntityType.ENTITY_FALLEN	0	0
+Mr. Fred	EntityType.ENTITY_MR_FRED	0	0
+Daddy Long Legs	EntityType.ENTITY_DADDYLONGLEGS	0	0
+Mask of Infamy	EntityType.ENTITY_MASK_OF_INFAMY	0	0
+Heart of Infamy	EntityType.ENTITY_HEART_OF_INFAMY	0	0
+Monstro 2	EntityType.ENTITY_MONSTRO2	0	0
+Little Horn	EntityType.ENTITY_LITTLE_HORN	0	0
+Adversary	EntityType.ENTITY_ADVERSARY	0	0
+Gurdy	EntityType.ENTITY_GURDY	0	0
+Mega Fatty	EntityType.ENTITY_MEGA_FATTY	0	0
+Peep	EntityType.ENTITY_PEEP	0	0
+Dingle	EntityType.ENTITY_DINGLE	0	0
+Cage	EntityType.ENTITY_CAGE	0	0
+Dark One	EntityType.ENTITY_DARK_ONE	0	0
+Mama Gurdy	EntityType.ENTITY_MAMA_GURDY	0	0
+The Gate	EntityType.ENTITY_GATE	0	0
+The Haunt	EntityType.ENTITY_THE_HAUNT	0	0
+--
+Mom	EntityType.ENTITY_MOM	0	0
+Mom (Head)	EntityType.ENTITY_MOM_HEAD	0	0
+Mom's Heart	EntityType.ENTITY_MOMS_HEART	0	0
+Hush	EntityType.ENTITY_HUSH	0	0
+Hush (Skinless)	EntityType.ENTITY_HUSH_SKINLESS	0	0
+Isaac	EntityType.ENTITY_ISAAC	0	0
+Satan	EntityType.ENTITY_SATAN	0	0
+The Lamb	EntityType.ENTITY_THE_LAMB	0	0
+Mega Satan	EntityType.ENTITY_MEGA_SATAN	0	0
+Mega Satan 2	EntityType.ENTITY_MEGA_SATAN_2	0	0
+Ultra Greed	EntityType.ENTITY_ULTRA_GREED	0	0
