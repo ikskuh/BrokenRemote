@@ -3,6 +3,8 @@ A remote debugging tool for The Binding of Isaac: Afterbirth+
 
 ![Early screenshot](http://i.imgur.com/7RFeRom.png)
 
+![User Interface](https://puu.sh/tfig6/bb77592aae.png)
+
 ## Install instructions
 
 1. Copy the folder "Mod" into your isaac mod folder
