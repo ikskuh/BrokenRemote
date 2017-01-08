@@ -23,7 +23,7 @@ public:
 
     void executeRemoteCode(QString code);
 
-    void log(QString const & message, QString const & category = "INFO");
+    void log(QString message, QString category = "INFO");
 
 private:
     void sendRaw(QString message);
@@ -128,6 +128,18 @@ private slots:
     void on_actionRestock_Shop_Full_triggered();
 
     void on_actionShuffle_Shop_triggered();
+
+    void on_actionRandom_Teleport_triggered();
+
+    void on_actionRandom_Teleport_No_Error_Room_triggered();
+
+    void on_actionReroll_Floor_Pickups_triggered();
+
+    void on_actionReroll_Floor_Collectibles_triggered();
+
+    void on_actionPrint_code_in_system_log_triggered(bool checked);
+
+    void on_actionAbout_triggered();
 
 private:
     Ui::MainWindow *ui;

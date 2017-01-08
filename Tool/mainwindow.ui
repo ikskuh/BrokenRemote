@@ -213,11 +213,18 @@
     <addaction name="actionRandom_Teleport"/>
     <addaction name="actionRandom_Teleport_No_Error_Room"/>
    </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>Options</string>
+    </property>
+    <addaction name="actionPrint_code_in_system_log"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuGame"/>
    <addaction name="menuRoom"/>
    <addaction name="menuScript"/>
    <addaction name="menuWindows"/>
+   <addaction name="menuOptions"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -787,6 +794,19 @@
   <action name="actionRandom_Teleport_No_Error_Room">
    <property name="text">
     <string>Random Teleport (No Error Room)</string>
+   </property>
+  </action>
+  <action name="actionPrint_code_in_system_log">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Print code in system log</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About...</string>
    </property>
   </action>
  </widget>

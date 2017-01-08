@@ -247,11 +247,16 @@ void MainWindow::executeRemoteCode(QString code)
 {
     // Prepare the code for transmittion: Replacing newlines with spaces,
     // because lua is awesome!
-    QString prepped = code.replace("\'", "\\'").replace("\n", "\\n");
+    QString prepped(code);
+    prepped.replace("\'", "\\'").replace("\n", "\\n");
 
     QString message = QString("{ type='run', code = '%1' }").arg(prepped);
 
     this->sendRaw(message);
+
+    if(this->ui->actionPrint_code_in_system_log->isChecked()) {
+        this->log(code, "CODE");
+    }
 }
 
 void MainWindow::sendRaw(QString message)
@@ -267,8 +272,9 @@ void MainWindow::sendRaw(QString message)
     }
 }
 
-void MainWindow::log(const QString &message, const QString &category)
+void MainWindow::log(QString message, QString category)
 {
+    message.replace("\n", "\n\t").trimmed();
     if(this->ui != nullptr) {
         this->ui->log->appendPlainText("[" + category + "]\t" + message); // Adds the message to the widget
         this->ui->log->verticalScrollBar()->setValue(ui->log->verticalScrollBar()->maximum()); // Scrolls to the bottom
@@ -512,4 +518,29 @@ void MainWindow::on_actionRandom_Teleport_triggered()
 void MainWindow::on_actionRandom_Teleport_No_Error_Room_triggered()
 {
     this->executeRemoteCode("Game():MoveToRandomRoom(false)");
+}
+
+void MainWindow::on_actionReroll_Floor_Pickups_triggered()
+{
+    this->executeRemoteCode("Game():RerollLevelPickups(0)");
+}
+
+void MainWindow::on_actionReroll_Floor_Collectibles_triggered()
+{
+    this->executeRemoteCode("Game():RerollLevelCollectibles()");
+}
+
+void MainWindow::on_actionPrint_code_in_system_log_triggered(bool checked)
+{
+
+}
+
+void MainWindow::on_actionAbout_triggered()
+{
+    QMessageBox::about(
+        this,
+        this->windowTitle(),
+        "The BrokenRemote tool \n"
+        "Some new line\n"
+        "Bla Blipp");
 }
