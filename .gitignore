@@ -38,3 +38,4 @@ CMakeLists.txt.user
 
 # Isaac Files
 *.it
+*release/*

@@ -53,7 +53,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::loadPickups(QMenu * menu, QString fileName, QString pickupVariant)
 {
-    menu->clear();
+    menu->actions().clear();
 
     QFile file(fileName);
     if(file.open(QFile::ReadOnly) == false) {
@@ -61,7 +61,6 @@ void MainWindow::loadPickups(QMenu * menu, QString fileName, QString pickupVaria
         menu->setEnabled(false);
         return;
     }
-    qDebug() << fileName;
     while(file.atEnd() == false)
     {
         QString line = QString::fromUtf8(file.readLine()).trimmed();
