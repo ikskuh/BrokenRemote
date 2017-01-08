@@ -77,6 +77,8 @@ function mod:MC_POST_RENDER()
 end
 ```
 
+![Text rendering](https://puu.sh/teN4c/1849c2765b.png)
+
 ## Experimental Items
 The mod features some items that can be used to implement your dream mod:
 
@@ -100,8 +102,6 @@ The mod features some items that can be used to implement your dream mod:
 - `Mod Trinket 2`
 - `Mod Trinket 3`
 - `Mod Trinket 4`
-
-![Text rendering](https://puu.sh/teN4c/1849c2765b.png)
 
 # Troubleshooting
 
