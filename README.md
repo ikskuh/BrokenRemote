@@ -71,7 +71,7 @@ end
 
 ## The game is always paused, when I'm in the tool. Is there a way to prevent this?
 
-The game is paused whenever it has lost its focus. You can prevent this by editing the file named `options.ini` located in `C:\Users\%name%\Documents\My Games\Binding of Isaac Afterbirth+`, whereas `%name%` depends on your username of the system.
+The game is paused whenever it has lost its focus. You can prevent this by editing the file named `options.ini` located in ` %USERPROFILE%\Documents\My Games\Binding of Isaac Afterbirth+`. `%USERPROFILE%` is an environmental variable that should point to your users profile directory.
 
 You have to change the line containing:
 
