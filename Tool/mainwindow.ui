@@ -273,10 +273,18 @@
      <addaction name="menuItem"/>
      <addaction name="actionBattery"/>
     </widget>
+    <widget class="QMenu" name="menuSpawn_Enemy">
+     <property name="title">
+      <string>Spawn Enemy</string>
+     </property>
+     <addaction name="separator"/>
+    </widget>
     <addaction name="menuHearts"/>
     <addaction name="menuCollectibles"/>
     <addaction name="menuActive_Item"/>
     <addaction name="menuSpawn_Pickup"/>
+    <addaction name="separator"/>
+    <addaction name="menuSpawn_Enemy"/>
     <addaction name="separator"/>
     <addaction name="actionReroll_Enemies"/>
     <addaction name="actionReroll_Floor_Pickups"/>

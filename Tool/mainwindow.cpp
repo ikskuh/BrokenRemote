@@ -47,6 +47,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     this->loadTemplates();
 
+    this->loadEnemies();
+
     this->ui->mdiArea->setViewMode(QMdiArea::TabbedView);
 
     this->setCentralWidget(this->ui->mdiArea);
@@ -135,6 +137,40 @@ void MainWindow::loadTemplates()
                 QString::fromUtf8(file.readAll()));
         }
     }
+}
+
+void MainWindow::loadEnemies()
+{
+    this->ui->menuSpawn_Enemy->actions().clear();
+
+    QFile file("Data/enemies.csv");
+    if(file.open(QFile::ReadOnly) == false) {
+        this->log("Failed to open Data/enemies.csv", "ENEMIES");
+        this->ui->menuSpawn_Enemy->setEnabled(false);
+        return;
+    }
+    while(file.atEnd() == false)
+    {
+        QString line = QString::fromUtf8(file.readLine()).trimmed();
+        QStringList options = line.split('\t');
+        if(options.length() != 4)
+            continue;
+
+        QAction *action = this->ui->menuSpawn_Enemy->addAction(options[0]);
+        action->setData(QVariant::fromValue(options));
+
+        connect(action, &QAction::triggered, this, &MainWindow::on_spawnEnemyClick);
+    }
+    file.close();
+
+    this->ui->menuSpawn_Enemy->setEnabled(this->ui->menuSpawn_Enemy->actions().count() > 0);
+}
+
+void MainWindow::on_spawnEnemyClick()
+{
+    QAction * action = (QAction*)sender();
+    QStringList data = action->data().toStringList();
+    this->spawn(data[1], data[2], data[3], false);
 }
 
 void MainWindow::addTemplate(QString name, QString contents)
@@ -282,15 +318,26 @@ void MainWindow::log(QString message, QString category)
 }
 
 
-void MainWindow::spawn(QString type, QString subtype, QString variant)
+void MainWindow::spawn(QString type, QString subtype, QString variant, bool spawnPickup)
 {
-    QString code(
-        "local p = Game():GetPlayer(0)\n"
-        "local r = Game():GetRoom()\n"
-        "local pos = r:FindFreePickupSpawnPosition(p.Position, 1.0, false)\n"
-        "Isaac.Spawn(%1, %2, %3, pos, Vector(0, 0), nil)\n"
-        "p:AnimateHappy()"
-        );
+    QString code;
+    if(spawnPickup)
+    {
+        code = QString(
+            "local p = Game():GetPlayer(0)\n"
+            "local r = Game():GetRoom()\n"
+            "local pos = r:FindFreePickupSpawnPosition(p.Position, 1.0, false)\n"
+            "Isaac.Spawn(%1, %2, %3, pos, Vector(0, 0), nil)\n"
+            "p:AnimateHappy()"
+            );
+    } else {
+        code = QString(
+            "local p = Game():GetPlayer(0)\n"
+            "local r = Game():GetRoom()\n"
+            "local pos = r:FindFreeTilePosition(r:GetCenterPos(), 3.0)\n"
+            "Isaac.Spawn(%1,%2,%3,pos,Vector(0,0),nil)"
+            );
+    }
     this->executeRemoteCode(code.arg(type, subtype, variant));
 }
 

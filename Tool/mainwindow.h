@@ -28,7 +28,7 @@ public:
 private:
     void sendRaw(QString message);
 
-    void spawn(QString type, QString subtype, QString variant);
+    void spawn(QString type, QString subtype, QString variant, bool spawnPickup = true);
 
     void loadPickups(QMenu * menu, QString fileName, QString pickupVariant);
 
@@ -40,11 +40,15 @@ private:
 
     void loadTemplates();
 
+    void loadEnemies();
+
     void addTemplate(QString name, QString contents);
 
     void on_createTemplateClick();
 
     void on_pickupClick();
+
+    void on_spawnEnemyClick();
 
 private slots:
     void on_actionQuit_triggered();
