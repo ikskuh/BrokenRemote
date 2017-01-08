@@ -1,7 +1,7 @@
 # BrokenRemote
 A remote debugging tool for The Binding of Isaac: Afterbirth+
 
-![](http://i.imgur.com/7RFeRom.png)
+![Early screenshot](http://i.imgur.com/7RFeRom.png)
 
 ## Install instructions
 
@@ -10,10 +10,11 @@ A remote debugging tool for The Binding of Isaac: Afterbirth+
 
 ## Usage instructions
 
-1. Start the tool
-2. Start the game, enable the mod, start a run
-3. Under isaacs feet, a "Connected" text should appear (see picture below)
-4. In the mod tool, the console should show a connected message as well as the name of the character.
+1. Set the Steam console options to `--luadebug`
+2. Start the tool
+3. Start the game, enable the mod, start a run
+4. Under isaacs feet, a "Connected" text should appear (see picture below)
+5. In the mod tool, the console should show a connected message as well as the name of the character.
 
 ![Isaac is Connected](https://puu.sh/teMkw/2a0a0bd421.png)
 
@@ -61,3 +62,5 @@ function mod:MC_POST_RENDER()
 
 end
 ```
+
+![Text rendering](https://puu.sh/teN4c/1849c2765b.png)
