@@ -7,6 +7,9 @@
 		- Trinket
 		- Card
 		- Pill
+- Provide some experimental items
+  - Pill
+  - Card
 - Spawn Enemy
 	- Spawn System
 	- Enemy List

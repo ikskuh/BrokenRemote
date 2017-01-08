@@ -1,0 +1,63 @@
+<items gfxroot="gfx/items/" version="1">
+  <active 
+    name="Mod Active 1"
+    description="Implement your dreams!"
+    maxcharges="0" 
+    gfx="mod-active-1.png" />
+  <active 
+    name="Mod Active 2"
+    description="Implement your dreams!"
+    maxcharges="0" 
+    gfx="mod-active-2.png" />
+  <active 
+    name="Mod Active 3"
+    description="Implement your dreams!"
+    maxcharges="0" 
+    gfx="mod-active-3.png" />
+  <active 
+    name="Mod Active 4"
+    description="Implement your dreams!"
+    maxcharges="0" 
+    gfx="mod-active-4.png" />
+  
+  <passive
+    name="Mod Passive 1"
+    description="Implement your dreams!" 
+    cache="all" 
+    gfx="mod-passive-1.png"  />
+  <passive
+    name="Mod Passive 2"
+    description="Implement your dreams!" 
+    cache="all" 
+    gfx="mod-passive-2.png"  />
+  <passive
+    name="Mod Passive 3"
+    description="Implement your dreams!" 
+    cache="all" 
+    gfx="mod-passive-3.png"  />
+  <passive
+    name="Mod Passive 4"
+    description="Implement your dreams!" 
+    cache="all" 
+    gfx="mod-passive-4.png"  />
+
+  <trinket
+    name="Mod Trinket 1"
+    description="Implement your dreams!" 
+    gfx="mod-trinket-1.png" />
+
+  <trinket
+    name="Mod Trinket 2"
+    description="Implement your dreams!" 
+    gfx="mod-trinket-2.png" />
+
+  <trinket
+    name="Mod Trinket 3"
+    description="Implement your dreams!" 
+    gfx="mod-trinket-3.png" />
+
+  <trinket
+    name="Mod Trinket 4"
+    description="Implement your dreams!" 
+    gfx="mod-trinket-4.png" />
+</items>

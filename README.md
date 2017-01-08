@@ -1,9 +1,14 @@
 # BrokenRemote
 A remote debugging tool for The Binding of Isaac: Afterbirth+
 
-![Early screenshot](http://i.imgur.com/7RFeRom.png)
 
+## Screenshots
+
+### User Interface
 ![User Interface](https://puu.sh/tfig6/bb77592aae.png)
+
+### Ingame Options
+![Ingame Look](https://puu.sh/tfFRQ/77269d8c9d.png)
 
 ## Install instructions
 
@@ -64,6 +69,30 @@ function mod:MC_POST_RENDER()
 
 end
 ```
+
+## Experimental Items
+The mod features some items that can be used to implement your dream mod:
+
+### Active Item
+
+- `Mod Active 1`
+- `Mod Active 2`
+- `Mod Active 3`
+- `Mod Active 4`
+
+### Passive Item
+
+- `Mod Passive 1`
+- `Mod Passive 2`
+- `Mod Passive 3`
+- `Mod Passive 4`
+
+### Trinkets
+
+- `Mod Trinket 1`
+- `Mod Trinket 2`
+- `Mod Trinket 3`
+- `Mod Trinket 4`
 
 ![Text rendering](https://puu.sh/teN4c/1849c2765b.png)
 

@@ -7,7 +7,7 @@
 
 
 -- Replace the parameter with your own item name
-local myItemId = Isaac.GetItemIdByName("Custom Item Name")
+local myItemId = Isaac.GetItemIdByName("Mod Active 1")
 
 -- Register our mod callback for the use with BrokenRemote
 function mod:MC_USE_ITEM(itemId, rng)
