@@ -11,10 +11,19 @@ class ScriptEditor : public QPlainTextEdit
 {
     Q_OBJECT
 public:
-    explicit ScriptEditor(QWidget *parent = 0);
+    explicit ScriptEditor(QString fileName, QWidget *parent = 0);
 
     void lineNumberAreaPaintEvent(QPaintEvent *event);
     int lineNumberAreaWidth();
+
+    void save();
+
+    void saveAs();
+
+private:
+    void makeDirty();
+
+    void updateWindowTitle();
 
 protected:
     void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
@@ -26,6 +35,8 @@ private slots:
 private:
     LineNumberArea * lineNumberArea;
     Highlighter * highlighter;
+    QString mFileName;
+    bool mIsDirty;
 };
 
 

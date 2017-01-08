@@ -10,6 +10,8 @@
 #include <QMessageBox>
 #include <QScrollBar>
 #include <QTcpSocket>
+#include <QFileDialog>
+#include <QMenu>
 
 #include <tuple>
 
@@ -32,6 +34,7 @@ MainWindow::MainWindow(QWidget *parent) :
     {
         this->log("Server cannot listen on port 12000, please check if another instance is still running.", "NETWORK");
     }
+    qDebug() << QApplication::applicationDirPath();
 
     this->loadPickups(this->ui->menuCard, "Data/cards.csv", "PickupVariant.PICKUP_TAROTCARD");
     this->loadPickups(this->ui->menuRune, "Data/runes.csv", "PickupVariant.PICKUP_TAROTCARD");
@@ -39,9 +42,11 @@ MainWindow::MainWindow(QWidget *parent) :
     this->loadPickups(this->ui->menuTrinket, "Data/trinkets.csv", "PickupVariant.PICKUP_TRINKET");
     this->loadPickups(this->ui->menuItem, "Data/items.csv", "PickupVariant.PICKUP_COLLECTIBLE");
 
-    // TODO: Implement correct MDI interface
-    // Open a single window here.
-    this->on_actionNew_triggered();
+    this->ui->mdiArea->setViewMode(QMdiArea::TabbedView);
+
+    this->setCentralWidget(this->ui->mdiArea);
+
+    this->renderWindowsMenu();
 }
 
 MainWindow::~MainWindow()
@@ -50,6 +55,35 @@ MainWindow::~MainWindow()
     this->ui = nullptr;
 }
 
+void MainWindow::renderWindowsMenu()
+{
+    /*
+    QList<QMdiSubWindow *> windows = this->ui->mdiArea->subWindowList();
+    ui->sepWindowList->setVisible(!windows.isEmpty());
+
+    QList<QAction*> actions = ui->menuWindows->actions();
+
+    int idx = actions.indexOf(ui->sepWindowList);
+    */
+    /*
+    for (int i = 0; i < windows.size(); ++i) {
+        QMdiSubWindow *mdiSubWindow = windows.at(i);
+        MdiChild *child = qobject_cast<MdiChild *>(mdiSubWindow->widget());
+
+        QString text;
+        if (i < 9) {
+            text = tr("&%1 %2").arg(i + 1)
+                               .arg(child->userFriendlyCurrentFile());
+        } else {
+            text = tr("%1 %2").arg(i + 1)
+                              .arg(child->userFriendlyCurrentFile());
+        }
+        QAction *action = windowMenu->addAction(text, mdiSubWindow, ActiveMdiSubWindowFunctor(mdiArea, mdiSubWindow));
+        action->setCheckable(true);
+        action ->setChecked(child == activeMdiChild());
+    }
+    */
+}
 
 void MainWindow::loadPickups(QMenu * menu, QString fileName, QString pickupVariant)
 {
@@ -82,6 +116,19 @@ void MainWindow::loadPickups(QMenu * menu, QString fileName, QString pickupVaria
     menu->setEnabled(menu->actions().count() > 0);
 }
 
+void MainWindow::openFile(QString fileName)
+{
+    ScriptEditor * edit = new ScriptEditor(fileName);
+
+    QMdiSubWindow *window = this->ui->mdiArea->addSubWindow(edit);
+    // window->setWindowState(Qt::WindowMaximized);
+    window->show();
+
+    connect(window, &QMdiSubWindow::destroyed, this, &MainWindow::renderWindowsMenu);
+
+    this->renderWindowsMenu();
+}
+
 void MainWindow::on_pickupClick()
 {
     QAction * action = (QAction*)sender();
@@ -97,13 +144,7 @@ void MainWindow::on_actionQuit_triggered()
 
 void MainWindow::on_actionNew_triggered()
 {
-    ScriptEditor * edit = new ScriptEditor();
-
-    QMdiSubWindow *window = this->ui->mdiArea->addSubWindow(edit);
-
-    window->setWindowState(Qt::WindowMaximized);
-    window->setWindowTitle("New Lua script");
-    window->show();
+    this->openFile(QString());
 }
 
 void MainWindow::on_actionClose_triggered()
@@ -125,6 +166,39 @@ void MainWindow::on_actionRun_triggered()
     QString code = editor->document()->toPlainText();
 
     this->executeRemoteCode(code);
+}
+
+void MainWindow::on_actionSave_triggered()
+{
+    QMdiSubWindow * window = this->ui->mdiArea->activeSubWindow();
+    if(window == nullptr) {
+        return;
+    }
+    ScriptEditor * editor = (ScriptEditor*) window->widget();
+    editor->save();
+}
+
+void MainWindow::on_actionSave_As_triggered()
+{
+    QMdiSubWindow * window = this->ui->mdiArea->activeSubWindow();
+    if(window == nullptr) {
+        return;
+    }
+    ScriptEditor * editor = (ScriptEditor*) window->widget();
+    editor->saveAs();
+}
+
+void MainWindow::on_actionOpen_triggered()
+{
+    QString file = QFileDialog::getOpenFileName(
+        this,
+        "Save file as...",
+        QString(),
+        "Lua Files (*.lua)");
+    if(file.isNull()) {
+        return;
+    }
+    this->openFile(file);
 }
 
 void MainWindow::executeRemoteCode(QString code)

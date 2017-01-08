@@ -2,8 +2,12 @@
 
 #include <QPainter>
 #include <QTextBlock>
+#include <QMessageBox>
+#include <QFileDialog>
 
-ScriptEditor::ScriptEditor(QWidget *parent) : QPlainTextEdit(parent)
+ScriptEditor::ScriptEditor(QString fileName, QWidget *parent) :
+    QPlainTextEdit(parent),
+    mFileName(fileName)
 {
     this->setPlaceholderText("Put your Lua code here!");
     this->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
@@ -19,6 +23,76 @@ ScriptEditor::ScriptEditor(QWidget *parent) : QPlainTextEdit(parent)
     this->highlightCurrentLine();
 
     this->highlighter = new Highlighter(this->document());
+
+    connect(this->document(), &QTextDocument::contentsChanged, this, &ScriptEditor::makeDirty);
+
+    if(fileName.isNull() == false)
+    {
+        QFile file(fileName);
+        if(file.open(QFile::ReadOnly)) {
+            this->document()->setPlainText(QString::fromUtf8(file.readAll()));
+        }
+        this->mIsDirty = false;
+    }
+
+    this->updateWindowTitle();
+}
+
+void ScriptEditor::makeDirty()
+{
+    this->mIsDirty = true;
+    this->updateWindowTitle();
+}
+
+void ScriptEditor::updateWindowTitle()
+{
+    QString postfix("");
+    if(this->mIsDirty) {
+        postfix = "*";
+    }
+    if(this->mFileName.isNull()) {
+        this->setWindowTitle(postfix + "New Lua script");
+    } else {
+        this->setWindowTitle(postfix + this->mFileName);
+    }
+}
+
+void ScriptEditor::save()
+{
+    if(this->mFileName.isNull()) {
+        this->saveAs();
+    } else {
+        QFile file(this->mFileName);
+        if(file.open(QFile::WriteOnly)) {
+            QByteArray data = this->document()->toPlainText().toUtf8();
+
+            file.write(data);
+            file.close();
+
+            this->mIsDirty = false;
+            this->updateWindowTitle();
+        } else {
+            QMessageBox::warning(
+                this,
+                this->windowTitle(),
+                file.errorString());
+        }
+    }
+}
+
+void ScriptEditor::saveAs()
+{
+    QString file = QFileDialog::getSaveFileName(
+        this,
+        "Save file as...",
+        QString(),
+        "Lua Files (*.lua)");
+    if(file.isNull()) {
+        return;
+    }
+    this->mFileName = file;
+    this->updateWindowTitle();
+    this->save();
 }
 
 int ScriptEditor::lineNumberAreaWidth()

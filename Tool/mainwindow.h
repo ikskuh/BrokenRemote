@@ -30,6 +30,10 @@ private:
 
     void on_pickupClick();
 
+    void openFile(QString fileName);
+
+    void renderWindowsMenu();
+
 private slots:
     void on_actionQuit_triggered();
 
@@ -88,6 +92,12 @@ private slots:
     void on_actionReroll_Enemies_triggered();
 
     void on_actionBattery_triggered();
+
+    void on_actionSave_triggered();
+
+    void on_actionSave_As_triggered();
+
+    void on_actionOpen_triggered();
 
 private:
     Ui::MainWindow *ui;
