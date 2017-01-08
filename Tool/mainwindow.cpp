@@ -270,7 +270,7 @@ void MainWindow::on_actionOpen_triggered()
 {
     QString file = QFileDialog::getOpenFileName(
         this,
-        "Save file as...",
+        "Open file...",
         QString(),
         "Lua Files (*.lua)");
     if(file.isNull()) {
