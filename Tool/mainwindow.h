@@ -9,6 +9,8 @@ namespace Ui {
     class MainWindow;
 }
 
+class QMdiSubWindow;
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -33,6 +35,8 @@ private:
     void openFile(QString fileName);
 
     void renderWindowsMenu();
+
+    void updateActions();
 
 private slots:
     void on_actionQuit_triggered();
@@ -98,6 +102,8 @@ private slots:
     void on_actionSave_As_triggered();
 
     void on_actionOpen_triggered();
+
+    void on_mdiArea_subWindowActivated(QMdiSubWindow *arg1);
 
 private:
     Ui::MainWindow *ui;

@@ -573,7 +573,7 @@
     <string>Increase Charge</string>
    </property>
    <property name="toolTip">
-    <string>Increases the active item charge by 1.</string>
+    <string>Increases the active item charge by 1</string>
    </property>
   </action>
   <action name="actionDischarge">

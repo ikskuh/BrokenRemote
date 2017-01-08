@@ -47,6 +47,8 @@ MainWindow::MainWindow(QWidget *parent) :
     this->setCentralWidget(this->ui->mdiArea);
 
     this->renderWindowsMenu();
+
+    this->updateActions();
 }
 
 MainWindow::~MainWindow()
@@ -403,4 +405,20 @@ void MainWindow::on_actionReroll_Enemies_triggered()
 void MainWindow::on_actionBattery_triggered()
 {
     this->spawn("EntityType.ENTITY_PICKUP", "PickupVariant.PICKUP_LIL_BATTERY", "0");
+}
+
+void MainWindow::on_mdiArea_subWindowActivated(QMdiSubWindow *arg1)
+{
+    this->updateActions();
+}
+
+
+void MainWindow::updateActions()
+{
+    bool hasWindow = (this->ui->mdiArea->activeSubWindow() != nullptr);
+    bool hasClients = (this->sockets.count() > 0);
+
+    this->ui->actionSave->setEnabled(hasWindow);
+    this->ui->actionSave_As->setEnabled(hasWindow);
+    this->ui->actionClose->setEnabled(hasWindow);
 }
