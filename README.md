@@ -66,3 +66,21 @@ end
 ```
 
 ![Text rendering](https://puu.sh/teN4c/1849c2765b.png)
+
+# Troubleshooting
+
+## The game is always paused, when I'm in the tool. Is there a way to prevent this?
+
+The game is paused whenever it has lost its focus. You can prevent this by editing the file named `options.ini` located in `C:\Users\%name%\Documents\My Games\Binding of Isaac Afterbirth+`, whereas `%name%` depends on your username of the system.
+
+You have to change the line containing:
+
+```
+PauseOnFocusLost=1
+``` 
+
+to this one:
+
+```
+PauseOnFocusLost=0
+``` 
