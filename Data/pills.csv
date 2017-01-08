@@ -1,0 +1,47 @@
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_TEARS_UP)	Tears Up
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_TEARS_DOWN)	Tears Down
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_RANGE_UP)	Range Up
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_RANGE_DOWN)	Range Down
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_LUCK_UP)	Luck Up
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_LUCK_DOWN)	Luck Down
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_SPEED_UP)	Speed Up
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_SPEED_DOWN)	Speed down
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_HEALTH_UP)	Health Up
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_HEALTH_DOWN)	Health Down
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_SMALLER)	One makes you smaller
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_LARGER)	One makes you larger
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_AMNESIA)	Amnesia
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_GULP)	Gulp!
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_BAD_GAS)	Bad Gas
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_48HOUR_ENERGY)	48 Hour Energy
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_FRIENDS_TILL_THE_END)	Friends till the end
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_VURP)	Vurp!
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_X_LAX)	X-Lax
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_BAD_TRIP)	Bad Trip
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_SEE_FOREVER)	I can see forever
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_PERCS)	Percs!
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_SUNSHINE)	Feels like ... Sunshine
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_PUBERTY)	Puberty
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_WIZARD)	I am a wizard
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_BOMBS_ARE_KEYS)	Bombs are key
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_IM_EXCITED)	I'm excited
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_HEMATEMESIS)	Hematemesis
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_TELEPILLS)	Telepills
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_LEMON_PARTY)	Lemon Party
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_HORF)	Horf
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_PARALYSIS)	Paralysis
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_FULL_HEALTH)	Full Health
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_IM_DROWSY)	I'm drowsy
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_QUESTIONMARK)	??? (Curse of the Maze)
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_POWER)	Power Pills
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_ADDICTED)	Addicted!
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_INFESTED_QUESTION)	Infested?
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_INFESTED_EXCLAMATION)	Infested!
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_RETRO_VISION)	Retro Vision
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_SOMETHINGS_WRONG)	Something's Wrong
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_I_FOUND_PILLS	I Found Pills!
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_PRETTY_FLY)	Pretty Fly
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_BALLS_OF_STEEL)	Balls of Steel
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_EXPLOSIVE_DIARRHEA)	Explosive Diarrhea
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_PHEROMONES)	Pheromones
+Isaac.AddPillEffectToPool(PillEffect.PILLEFFECT_RELAX)	Relax

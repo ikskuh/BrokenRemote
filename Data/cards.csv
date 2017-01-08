@@ -1,52 +1,42 @@
-CARD	WORLD	22	The World
-CARD	RULES	44	Rules Card
-CARD	STARS	18	The Stars
-RUNE	EHWAZ	34	Ehwaz
-RUNE	HAGALAZ	32	Hagalaz
-CARD	EMPEROR	5	Emperor
-RUNE	JERA	33	Jera
-CARD	ACE_OF_DIAMONDS	28	Ace of Diamonds
-CARD	HIEROPHANT	6	Hierophant
-CARD	HIGH_PRIESTESS	3	The High Priestess
-CARD	JUSTICE	9	Justice
-CARD	FOOL	1	The Fool
-CARD	MAGICIAN	2	The Magician
-CARD	TOWER	17	The Tower
-CARD	HANGED_MAN	13	The Hanged Man
-CARD	DIAMONDS_2	24	Two of Diamonds
-CARD	JUDGEMENT	21	Judgement
-CARD	LOVERS	7	The Lovers
-RUNE	BERKANO	38	Berkano
-CARD	ACE_OF_SPADES	29	Ace of Spades
-CARD	HOLY	51	
-CARD	EMERGENCY_CONTACT	50	Emergency Contact
-CARD	DICE_SHARD	49	Dice Shard
-CARD	JOKER	31	The Joker
-CARD	RANDOM	-1	Random Card
-CARD	HUMANITY	45	A Card against Humanity
-CARD	QUESTIONMARK	48	Questionmark
-CARD	GET_OUT_OF_JAIL	47	Get out of Jail (Free)
-RUNE	PERTHRO	37	Perthro
-CARD	CREDIT	43	Credit Card
-CARD	CHAOS	42	Chaos Card
-RUNE	BLACK	41	Black Rune
-RUNE	BLANK	40	Blank Rune
-RUNE	ALGIZ	39	Algiz
-CARD	MOON	19	The Moon
-CARD	ACE_OF_CLUBS	27	Ace of Clubs
-CARD	DEATH	14	Death
-CARD	TEMPERANCE	15	Temperance
-CARD	SUICIDE_KING	46	Suicide King
-CARD	WHEEL_OF_FORTUNE	11	Wheel of Fortune
-RUNE	ANSUZ	36	Ansuz
-CARD	SPADES_2	25	Two of Spades
-RUNE	DAGAZ	35	Dagaz
-CARD	ACE_OF_HEARTS	30	Ace of Hearts
-CARD	HEARTS_2	26	Two of Hearts
-CARD	CLUBS_2	23	Two of Clubs
-CARD	DEVIL	16	The Devil
-CARD	HERMIT	10	The Hermit
-CARD	EMPRESS	4	The Empress
-CARD	STRENGTH	12	Strength
-CARD	SUN	20	The Sun
-CARD	CHARIOT	8	The Chariot
+Card.CARD_WORLD	The World
+CARD_RULES	Rules Card
+Card.CARD_STARS	The Stars
+Card.CARD_EMPEROR	Emperor
+Card.CARD_ACE_OF_DIAMONDS	Ace of Diamonds
+Card.CARD_HIEROPHANT	Hierophant
+Card.CARD_HIGH_PRIESTESS	The High Priestess
+Card.CARD_JUSTICE	Justice
+Card.CARD_FOOL	The Fool
+Card.CARD_MAGICIAN	The Magician
+Card.CARD_TOWER	The Tower
+Card.CARD_HANGED_MAN	The Hanged Man
+Card.CARD_DIAMONDS_Two of Diamonds
+Card.CARD_JUDGEMENT	Judgement
+Card.CARD_LOVERS	The Lovers
+Card.CARD_ACE_OF_SPADES	Ace of Spades
+Card.CARD_HOLY	
+Card.CARD_EMERGENCY_CONTACT	Emergency Contact
+Card.CARD_DICE_SHARD	Dice Shard
+Card.CARD_JOKER	The Joker
+Card.CARD_RANDOM	-Random Card
+Card.CARD_HUMANITY	A Card against Humanity
+Card.CARD_QUESTIONMARK	Questionmark
+Card.CARD_GET_OUT_OF_JAIL	Get out of Jail (Free)
+Card.CARD_CREDIT	Credit Card
+Card.CARD_CHAOS	Chaos Card
+Card.CARD_MOON	The Moon
+Card.CARD_ACE_OF_CLUBS	Ace of Clubs
+Card.CARD_DEATH	Death
+Card.CARD_TEMPERANCE	Temperance
+Card.CARD_SUICIDE_KING	Suicide King
+Card.CARD_WHEEL_OF_FORTUNE	Wheel of Fortune
+Card.CARD_SPADES_Two of Spades
+Card.CARD_ACE_OF_HEARTS	Ace of Hearts
+Card.CARD_HEARTS_Two of Hearts
+Card.CARD_CLUBS_Two of Clubs
+Card.CARD_DEVIL	The Devil
+Card.CARD_HERMIT	The Hermit
+Card.CARD_EMPRESS	The Empress
+Card.CARD_STRENGTH	Strength
+Card.CARD_SUN	The Sun
+Card.CARD_CHARIOT	The Chariot

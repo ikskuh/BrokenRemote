@@ -33,11 +33,11 @@ MainWindow::MainWindow(QWidget *parent) :
         this->log("Server cannot listen on port 12000, please check if another instance is still running.", "NETWORK");
     }
 
-    this->loadPickups(this->ui->actionCard, "Data/cards.csv");
-    this->loadPickups(this->ui->actionRune, "Data/runes.csv");
-    this->loadPickups(this->ui->actionPill, "Data/pills.csv");
-    this->loadPickups(this->ui->actionTrinket, "Data/trinkets.csv");
-    this->loadPickups(this->ui->actionItem, "Data/items.csv");
+    this->loadPickups(this->ui->menuCard, "Data/cards.csv", "PickupVariant.PICKUP_TAROTCARD");
+    this->loadPickups(this->ui->menuRune, "Data/runes.csv", "PickupVariant.PICKUP_TAROTCARD");
+    this->loadPickups(this->ui->menuPill, "Data/pills.csv", "PickupVariant.PICKUP_PILL");
+    this->loadPickups(this->ui->menuTrinket, "Data/trinkets.csv", "PickupVariant.PICKUP_TRINKET");
+    this->loadPickups(this->ui->menuItem, "Data/items.csv", "PickupVariant.PICKUP_COLLECTIBLE");
 
     // TODO: Implement correct MDI interface
     // Open a single window here.
@@ -47,12 +47,48 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
+    this->ui = nullptr;
 }
 
 
-void MainWindow::loadPickups(QAction * action, QString fileName)
+void MainWindow::loadPickups(QMenu * menu, QString fileName, QString pickupVariant)
 {
-    action->setEnabled(false);
+    menu->clear();
+
+    QFile file(fileName);
+    if(file.open(QFile::ReadOnly) == false) {
+        this->log("Failed to open " + fileName, "PICKUPS");
+        menu->setEnabled(false);
+        return;
+    }
+    qDebug() << fileName;
+    while(file.atEnd() == false)
+    {
+        QString line = QString::fromUtf8(file.readLine()).trimmed();
+        QStringList options = line.split('\t');
+        if(options.length() != 2)
+            continue;
+
+        QStringList info;
+        info << pickupVariant;
+        info << options[0];
+
+        QAction *action = menu->addAction(options[1]);
+        action->setData(QVariant::fromValue(info));
+
+        connect(action, &QAction::triggered, this, &MainWindow::on_pickupClick);
+    }
+    file.close();
+
+    menu->setEnabled(menu->actions().count() > 0);
+}
+
+void MainWindow::on_pickupClick()
+{
+    QAction * action = (QAction*)sender();
+    QStringList data = action->data().toStringList();
+
+    this->spawn("EntityType.ENTITY_PICKUP", data[0], data[1]);
 }
 
 void MainWindow::on_actionQuit_triggered()
@@ -118,8 +154,10 @@ void MainWindow::sendRaw(QString message)
 
 void MainWindow::log(const QString &message, const QString &category)
 {
-    this->ui->log->appendPlainText("[" + category + "]\t" + message); // Adds the message to the widget
-    this->ui->log->verticalScrollBar()->setValue(ui->log->verticalScrollBar()->maximum()); // Scrolls to the bottom
+    if(this->ui != nullptr) {
+        this->ui->log->appendPlainText("[" + category + "]\t" + message); // Adds the message to the widget
+        this->ui->log->verticalScrollBar()->setValue(ui->log->verticalScrollBar()->maximum()); // Scrolls to the bottom
+    }
 }
 
 

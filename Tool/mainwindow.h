@@ -26,7 +26,9 @@ private:
 
     void spawn(QString type, QString subtype, QString variant);
 
-    void loadPickups(QAction * action, QString fileName);
+    void loadPickups(QMenu * menu, QString fileName, QString pickupVariant);
+
+    void on_pickupClick();
 
 private slots:
     void on_actionQuit_triggered();
