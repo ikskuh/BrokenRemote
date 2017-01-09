@@ -324,11 +324,14 @@
      <property name="title">
       <string>Teleport to...</string>
      </property>
-     <addaction name="actionStart_Room"/>
-     <addaction name="actionBoss_Room"/>
-     <addaction name="actionGolden_Room"/>
-     <addaction name="actionSecret_Room"/>
-     <addaction name="actionShop"/>
+     <addaction name="actionTeleportToStartRoom"/>
+     <addaction name="actionTeleportToBossRoom"/>
+     <addaction name="actionTeleportToTreasureRoom"/>
+     <addaction name="actionTeleportToSecretRoom"/>
+     <addaction name="actionTeleportToShop"/>
+     <addaction name="separator"/>
+     <addaction name="actionRandom_Teleport"/>
+     <addaction name="actionRandom_Teleport_No_Error_Room"/>
     </widget>
     <widget class="QMenu" name="menuApply_map_effects">
      <property name="title">
@@ -341,8 +344,6 @@
      <addaction name="separator"/>
      <addaction name="actionOpen_Secret_Rooms"/>
     </widget>
-    <addaction name="actionRandom_Teleport"/>
-    <addaction name="actionRandom_Teleport_No_Error_Room"/>
     <addaction name="menuTeleport_to"/>
     <addaction name="separator"/>
     <addaction name="menuApply_map_effects"/>
@@ -363,6 +364,7 @@
      <addaction name="actionScarred_Womb_II"/>
      <addaction name="actionUtero_II"/>
      <addaction name="separator"/>
+     <addaction name="actionHush"/>
     </widget>
     <widget class="QMenu" name="menuSection_8">
      <property name="title">
@@ -405,7 +407,7 @@
       <string>Section 5</string>
      </property>
      <addaction name="actionThe_Cathedral"/>
-     <addaction name="actionSheol_2"/>
+     <addaction name="actionSheol"/>
     </widget>
     <widget class="QMenu" name="menuSection_13">
      <property name="title">
@@ -426,7 +428,8 @@
      </property>
      <addaction name="actionGreedBasement"/>
      <addaction name="actionGreedDepths"/>
-     <addaction name="actionGreedCatacombs"/>
+     <addaction name="actionGreedCaves"/>
+     <addaction name="actionGreedTheWomb"/>
      <addaction name="actionGreedSheol"/>
      <addaction name="actionGreedTheShop"/>
      <addaction name="actionGreedUltraGreed"/>
@@ -950,6 +953,9 @@
    <property name="text">
     <string>Random Teleport</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
   </action>
   <action name="actionRandom_Teleport_No_Error_Room">
    <property name="text">
@@ -1074,7 +1080,7 @@
     <string>The Cathedral</string>
    </property>
   </action>
-  <action name="actionSheol_2">
+  <action name="actionSheol">
    <property name="text">
     <string>Sheol</string>
    </property>
@@ -1129,7 +1135,7 @@
     <string>Depths</string>
    </property>
   </action>
-  <action name="actionGreedCatacombs">
+  <action name="actionGreedCaves">
    <property name="text">
     <string>Caves</string>
    </property>
@@ -1154,27 +1160,30 @@
     <string>Special Rooms (Greed)</string>
    </property>
   </action>
-  <action name="actionStart_Room">
+  <action name="actionTeleportToStartRoom">
    <property name="text">
     <string>Start Room</string>
    </property>
   </action>
-  <action name="actionBoss_Room">
+  <action name="actionTeleportToBossRoom">
    <property name="text">
     <string>Boss Room</string>
    </property>
   </action>
-  <action name="actionGolden_Room">
+  <action name="actionTeleportToTreasureRoom">
    <property name="text">
-    <string>Golden Room</string>
+    <string>Treasure Room</string>
+   </property>
+   <property name="toolTip">
+    <string>Treasure Room</string>
    </property>
   </action>
-  <action name="actionSecret_Room">
+  <action name="actionTeleportToSecretRoom">
    <property name="text">
     <string>Secret Room</string>
    </property>
   </action>
-  <action name="actionShop">
+  <action name="actionTeleportToShop">
    <property name="text">
     <string>Shop</string>
    </property>
@@ -1204,44 +1213,9 @@
     <string>Open Secret Rooms</string>
    </property>
   </action>
-  <action name="actionX_2">
+  <action name="actionGreedTheWomb">
    <property name="text">
-    <string>x</string>
-   </property>
-  </action>
-  <action name="actionX_3">
-   <property name="text">
-    <string>x</string>
-   </property>
-  </action>
-  <action name="actionX_4">
-   <property name="text">
-    <string>x</string>
-   </property>
-  </action>
-  <action name="actionX_5">
-   <property name="text">
-    <string>x</string>
-   </property>
-  </action>
-  <action name="actionX_6">
-   <property name="text">
-    <string>x</string>
-   </property>
-  </action>
-  <action name="actionX_7">
-   <property name="text">
-    <string>x</string>
-   </property>
-  </action>
-  <action name="actionX_8">
-   <property name="text">
-    <string>x</string>
-   </property>
-  </action>
-  <action name="actionX_9">
-   <property name="text">
-    <string>x</string>
+    <string>The Womb</string>
    </property>
   </action>
  </widget>

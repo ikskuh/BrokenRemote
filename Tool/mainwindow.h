@@ -161,6 +161,70 @@ private slots:
 
     void on_actionCellar_II_triggered();
 
+    void on_actionThe_Void_triggered();
+
+    void on_actionThe_Dark_Room_triggered();
+
+    void on_actionThe_Chest_triggered();
+
+    void on_actionSheol_triggered();
+
+    void on_actionThe_Cathedral_triggered();
+
+    void on_actionThe_Depths_I_triggered();
+
+    void on_actionNecropolis_I_triggered();
+
+    void on_actionThe_Depths_II_triggered();
+
+    void on_actionNecropolis_II_triggered();
+
+    void on_actionCaves_I_triggered();
+
+    void on_actionCaves_II_triggered();
+
+    void on_actionFlooded_Caves_I_triggered();
+
+    void on_actionFlooded_Caves_II_triggered();
+
+    void on_actionThe_Womb_I_triggered();
+
+    void on_actionScarred_Womb_I_triggered();
+
+    void on_actionUtero_I_triggered();
+
+    void on_actionThe_Womb_II_triggered();
+
+    void on_actionScarred_Womb_II_triggered();
+
+    void on_actionUtero_II_triggered();
+
+    void on_actionDank_Depths_I_triggered();
+
+    void on_actionDank_Depths_II_triggered();
+
+    void on_actionHush_triggered();
+
+    void on_actionCatacombs_I_triggered();
+
+    void on_actionCatacombs_II_triggered();
+
+    void on_actionGreedBasement_triggered();
+
+    void on_actionGreedDepths_triggered();
+
+    void on_actionGreedCaves_triggered();
+
+    void on_actionGreedSheol_triggered();
+
+    void on_actionGreedTheShop_triggered();
+
+    void on_actionGreedUltraGreed_triggered();
+
+    void on_actionSpecial_Rooms_Greed_triggered();
+
+    void on_actionGreedTheWomb_triggered();
+
 private:
     Ui::MainWindow *ui;
     QTcpServer * server;

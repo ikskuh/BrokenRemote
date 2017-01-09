@@ -10,7 +10,11 @@
   - Pill
   - Card
 - Jump List
-	- Go to any level in the game
+	- Teleport to:
+		- Treasure Room
+		- Angel Room
+		- Devil Room
+		- 
 - Test the Room Tool
 	- Open Devil Deal/Mega Satan/Boss Rush/Blue Womb/The Void
 	- Reroll Level Collectibles

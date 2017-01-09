@@ -651,22 +651,22 @@ void MainWindow::on_actionThe_Void_triggered()
 
 void MainWindow::on_actionThe_Dark_Room_triggered()
 {
-    this->changeStage("LevelStage.STAGE6", "StageType.STAGETYPE_WOTL");
+    this->changeStage("LevelStage.STAGE6", "StageType.STAGETYPE_ORIGINAL");
 }
 
 void MainWindow::on_actionThe_Chest_triggered()
 {
-    this->changeStage("LevelStage.STAGE6", "StageType.STAGETYPE_ORIGINAL");
+    this->changeStage("LevelStage.STAGE6", "StageType.STAGETYPE_WOTL");
 }
 
 void MainWindow::on_actionSheol_triggered()
 {
-    this->changeStage("LevelStage.STAGE5", "StageType.STAGETYPE_WOTL");
+    this->changeStage("LevelStage.STAGE5", "StageType.STAGETYPE_ORIGINAL");
 }
 
 void MainWindow::on_actionThe_Cathedral_triggered()
 {
-    this->changeStage("LevelStage.STAGE5", "StageType.STAGETYPE_ORIGINAL");
+    this->changeStage("LevelStage.STAGE5", "StageType.STAGETYPE_WOTL");
 }
 
 void MainWindow::on_actionThe_Depths_I_triggered()
@@ -701,12 +701,12 @@ void MainWindow::on_actionCaves_II_triggered()
 
 void MainWindow::on_actionFlooded_Caves_I_triggered()
 {
-    this->changeStage("LevelStage.STAGE2_1", "StageType.STAGETYPE_REBIRTH");
+    this->changeStage("LevelStage.STAGE2_1", "StageType.STAGETYPE_AFTERBIRTH");
 }
 
 void MainWindow::on_actionFlooded_Caves_II_triggered()
 {
-    this->changeStage("LevelStage.STAGE2_2", "StageType.STAGETYPE_REBIRTH");
+    this->changeStage("LevelStage.STAGE2_2", "StageType.STAGETYPE_AFTERBIRTH");
 }
 
 void MainWindow::on_actionThe_Womb_I_triggered()
@@ -716,7 +716,7 @@ void MainWindow::on_actionThe_Womb_I_triggered()
 
 void MainWindow::on_actionScarred_Womb_I_triggered()
 {
-    this->changeStage("LevelStage.STAGE4_1", "StageType.STAGETYPE_REBIRTH");
+    this->changeStage("LevelStage.STAGE4_1", "StageType.STAGETYPE_AFTERBIRTH");
 }
 
 void MainWindow::on_actionUtero_I_triggered()
@@ -731,7 +731,7 @@ void MainWindow::on_actionThe_Womb_II_triggered()
 
 void MainWindow::on_actionScarred_Womb_II_triggered()
 {
-    this->changeStage("LevelStage.STAGE4_2", "StageType.STAGETYPE_REBIRTH");
+    this->changeStage("LevelStage.STAGE4_2", "StageType.STAGETYPE_AFTERBIRTH");
 }
 
 void MainWindow::on_actionUtero_II_triggered()
@@ -741,12 +741,12 @@ void MainWindow::on_actionUtero_II_triggered()
 
 void MainWindow::on_actionDank_Depths_I_triggered()
 {
-    this->changeStage("LevelStage.STAGE3_1", "StageType.STAGETYPE_REBIRTH");
+    this->changeStage("LevelStage.STAGE3_1", "StageType.STAGETYPE_AFTERBIRTH");
 }
 
 void MainWindow::on_actionDank_Depths_II_triggered()
 {
-    this->changeStage("LevelStage.STAGE3_2", "StageType.STAGETYPE_REBIRTH");
+    this->changeStage("LevelStage.STAGE3_2", "StageType.STAGETYPE_AFTERBIRTH");
 }
 
 void MainWindow::on_actionHush_triggered()
@@ -802,4 +802,9 @@ void MainWindow::on_actionSpecial_Rooms_Greed_triggered()
 void MainWindow::on_actionGreedTheWomb_triggered()
 {
     this->changeStage("LevelStage.STAGE4_GREED", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionOpen_Secret_Rooms_triggered()
+{
+    this->executeRemoteCode("Game():GetLevel():SetCanSeeEverything(true)");
 }
