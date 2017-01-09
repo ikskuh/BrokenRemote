@@ -1,10 +1,12 @@
 # TODO List
 
-- MDI Interface
-	- Create file from template
-		- Trinket
-		- Card
-		- Pill
+- Icons
+	- Map Effects
+	- 
+- Create file from template
+	- Trinket
+	- Card
+	- Pill
 - Provide some experimental items
   - Pills
   - Card
