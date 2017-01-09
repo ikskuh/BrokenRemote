@@ -25,7 +25,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    scripteditor.cpp
+    scripteditor.cpp \
+    mainwindow_events.cpp
 
 HEADERS  += mainwindow.h \
     scripteditor.h

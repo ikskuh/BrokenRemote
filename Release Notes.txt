@@ -1,5 +1,11 @@
 # BrokenRemote Release Notes
 
+## Version 0.4
+
+Changes:
+- Game->Tool protocol changes from raw lines to json encoded data
+- 
+
 ## Version 0.3
 
 Additions:

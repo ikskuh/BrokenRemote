@@ -1,7 +1,15 @@
 local mod = RegisterMod("isaac-remote", 2);
-local socket = require("socket")
+local socket = require "socket"
+local json = require "json"
 
 local client
+
+local function sendMessage(msg)
+  if type(msg) ~= "table" then
+    msg = { type="msg" , msg=tostring(msg) }
+  end
+  client:send(json.encode(msg).."\n")
+end
 
 local function tryConnect(initial)
   if client then
@@ -13,20 +21,20 @@ local function tryConnect(initial)
   if success then
     client:settimeout(0.01)
     Isaac.DebugString("Done: " .. tostring(client))
-    client:send("I am " .. Game():GetPlayer(0):GetName() .. "\n")
 		
 		-- Route all printing to the network connection
 		_G["print"] = function(...)
 			local t = table.pack(...)
 			if #t > 0 then
-				client:send(tostring(t[1]))
+				local msg = tostring(t[1])
 				for i=2,#t do
-					client:send("\t")
-					client:send(tostring(t[i]))
+					msg = msg .. "\t" .. tostring(t[i])
 				end
-				client:send("\n")
+				sendMessage(msg)
 			end
 		end
+    
+    print("I am " .. Game():GetPlayer(0):GetName())
   else
     client = nil
   end
@@ -60,6 +68,67 @@ function mod:render()
 
 end
 
+local function sendRoomList()
+  local l = Game():GetLevel()
+  local function hasRoom(t)
+    local rng = RNG()
+    local idx1 = Game():GetLevel():QueryRoomTypeIndex(t, false, rng)
+    rng:Next()
+    local idx2 = Game():GetLevel():QueryRoomTypeIndex(t, false, rng)
+    print("room", t, idx1, idx2, idx1 == idx2)
+    return (idx1 ~= -1) and (idx1 == idx2)
+  end
+  local data = { 
+    type = "roomlist", 
+    rooms = {
+      -- ui->actionTeleportToStartRoom,
+      true,
+      -- ui->actionTeleportToShop,
+      hasRoom(RoomType.ROOM_SHOP),
+      -- ui->actionTeleportToBossRoom,
+      hasRoom(RoomType.ROOM_BOSS),
+      -- ui->actionTeleportToTreasureRoom,
+      hasRoom(RoomType.ROOM_TREASURE),
+      -- ui->actionTeleportToSecretRoom,
+      hasRoom(RoomType.ROOM_SECRET),
+      -- ui->actionAngel_Room,
+      hasRoom(RoomType.ROOM_ANGEL),
+      -- ui->actionDevil_Room,
+      hasRoom(RoomType.ROOM_DEVIL),
+      -- ui->actionSuper_Secret_Room,
+      hasRoom(RoomType.ROOM_SUPERSECRET),
+      -- ui->actionArcade,
+      hasRoom(RoomType.ROOM_ARCADE),
+      -- ui->actionSacrifice_Room,
+      hasRoom(RoomType.ROOM_SACRIFICE),
+      -- ui->actionCurse_Room,
+      hasRoom(RoomType.ROOM_CURSE),
+      -- ui->actionChallenge_Room,
+      hasRoom(RoomType.ROOM_CHALLENGE),
+      -- ui->actionLibrary,
+      hasRoom(RoomType.ROOM_LIBRARY),
+      -- ui->actionDungeon,
+      hasRoom(RoomType.ROOM_DUNGEON),
+      -- ui->actionIsaacs_Room,
+      hasRoom(RoomType.ROOM_ISAACS),
+      -- ui->actionBarren,
+      hasRoom(RoomType.ROOM_BARREN),
+      -- ui->actionDice_Room,
+      hasRoom(RoomType.ROOM_DICE),
+      -- ui->actionError,
+      hasRoom(RoomType.ROOM_ERROR),
+      -- ui->actionBlack_Market,
+      hasRoom(RoomType.ROOM_BLACK_MARKET),
+      -- ui->actionBoss_Rush_Room
+      hasRoom(RoomType.ROOM_BOSSRUSH),
+      -- ui->actionMini_Boss
+      hasRoom(RoomType.ROOM_MINIBOSS),
+    }
+  }
+  
+  sendMessage(data)
+end
+
 function mod:update()
   if client then
   
@@ -83,18 +152,19 @@ function mod:update()
             if script then
               script()
             else
-              print("Failed to compile code: " .. tostring(err))
+              sendMessage { type ="err", msg = ("Failed to compile code: " .. tostring(err)) }
             end
+          elseif data.type == "roomlist" then
+            sendRoomList()
           else
-            print("Unkown data type: " .. tostring(data.type))
+            sendMessage { type ="err", msg = ("Unkown data type: " .. tostring(data.type)) }
           end
         else
-          print("Failed to unpack data: " .. tostring(err))
+          sendMessage { type ="err", msg = ("Failed to unpack data: " .. tostring(err)) }
         end
       end)
       if not ok then
-        client:send(tostring(err or "Unknown error!"))
-        client:send("\n")
+        sendMessage { type ="err", msg = err or "Unknown error!" }
       end
 			_G["mod"] = nil
     end
@@ -119,7 +189,7 @@ for i,v in pairs(ModCallbacks) do
 				mod[i](table.unpack(args)) 
 			end)
 			if not ok and client then
-				client:send("Failed to execute " .. v .. ": " .. tostring(result) .. "\n")
+				sendMessage { type="err", msg="Failed to execute " .. v .. ": " .. tostring(result) }
 			end
 		end
 	end)

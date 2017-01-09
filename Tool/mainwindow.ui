@@ -334,6 +334,7 @@
      <addaction name="actionTeleportToStartRoom"/>
      <addaction name="actionTeleportToShop"/>
      <addaction name="actionTeleportToBossRoom"/>
+     <addaction name="actionMiniboss_Romm"/>
      <addaction name="actionTeleportToTreasureRoom"/>
      <addaction name="actionTeleportToSecretRoom"/>
      <addaction name="actionAngel_Room"/>
@@ -1513,6 +1514,15 @@
    </property>
    <property name="text">
     <string>Sacrifice Room</string>
+   </property>
+  </action>
+  <action name="actionMiniboss_Romm">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/room-miniboss.png</normaloff>:/icons/room-miniboss.png</iconset>
+   </property>
+   <property name="text">
+    <string>Mini Boss Room</string>
    </property>
   </action>
  </widget>

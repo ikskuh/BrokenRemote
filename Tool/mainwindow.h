@@ -11,6 +11,8 @@ namespace Ui {
 
 class QMdiSubWindow;
 
+class QJsonObject;
+
 class ScriptEditor;
 
 class MainWindow : public QMainWindow
@@ -53,6 +55,10 @@ private:
     void on_pickupClick();
 
     void on_spawnEnemyClick();
+
+    void on_teleportToAboutToShow();
+
+    void setTeleportListStateFromJson(QJsonObject & obj);
 
 private slots:
     void on_actionQuit_triggered();
@@ -276,6 +282,8 @@ private slots:
     void on_actionDevil_Room_triggered();
 
     void on_actionSacrifice_Room_triggered();
+
+    void on_actionMiniboss_Romm_triggered();
 
 private:
     Ui::MainWindow *ui;
