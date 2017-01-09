@@ -42,5 +42,45 @@
         <file>icons/teleport.png</file>
         <file>icons/reroll-collectibles.png</file>
         <file>icons/reroll-pedestal.png</file>
+        <file>icons/map-full.png</file>
+        <file>icons/map-layout.png</file>
+        <file>icons/map-rooms.png</file>
+        <file>icons/map-secrets.png</file>
+        <file>icons/room-arcade.png</file>
+        <file>icons/room-boss.png</file>
+        <file>icons/room-curse.png</file>
+        <file>icons/room-dice.png</file>
+        <file>icons/room-library.png</file>
+        <file>icons/room-miniboss.png</file>
+        <file>icons/room-sacrifice.png</file>
+        <file>icons/room-secret.png</file>
+        <file>icons/room-shop.png</file>
+        <file>icons/room-treasure.png</file>
+        <file>icons/room-angel.png</file>
+        <file>icons/room-barren.png</file>
+        <file>icons/room-challenge.png</file>
+        <file>icons/room-devil.png</file>
+        <file>icons/room-dungeon.png</file>
+        <file>icons/room-isaacs.png</file>
+        <file>icons/room-supersecret.png</file>
+        <file>icons/room-vault.png</file>
+        <file>icons/stage-basement.png</file>
+        <file>icons/stage-blue-womb.png</file>
+        <file>icons/stage-burning-basement.png</file>
+        <file>icons/stage-catacombs.png</file>
+        <file>icons/stage-cathedral.png</file>
+        <file>icons/stage-caves.png</file>
+        <file>icons/stage-cellar.png</file>
+        <file>icons/stage-chest.png</file>
+        <file>icons/stage-dank-depths.png</file>
+        <file>icons/stage-darkroom.png</file>
+        <file>icons/stage-depths.png</file>
+        <file>icons/stage-flooded-caves.png</file>
+        <file>icons/stage-necropolis.png</file>
+        <file>icons/stage-scarred-womb.png</file>
+        <file>icons/stage-sheol.png</file>
+        <file>icons/stage-utero.png</file>
+        <file>icons/stage-void.png</file>
+        <file>icons/stage-womb.png</file>
     </qresource>
 </RCC>

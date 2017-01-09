@@ -1,0 +1,51 @@
+# BrokenRemote Release Notes
+
+## Version 0.3
+
+Additions:
+- Experimental Items
+	- `Mod Active 1`  ... `Mod Active 4`
+	- `Mod Passive 1` ... `Mod Passive 4`
+	- `Mod Trinket 1` ... `Mod Trinket 4`
+- Adds option to **Game** menu to spawn enemies
+- Adds **Stage** menu to change stages
+- Adds **Level** menu to affect the level
+  - Apply any mapping effect
+  - Teleport to any special room available
+- New Templates
+  - Passive Item
+
+## Version 0.2
+
+Additions:
+- Icons!
+- Expanded Game Menu
+	- Adds spawning of pickups (Items, Cards, ...)
+	- Adds reroll options for floor pickups and floor items
+- Adds Room Menu
+	- Option to try open different special doors
+	- Restocking and rerolling the store
+	- Random Teleports
+- Adds option to log all sent code to the system log
+	- This can be used to learn about modding custom effects
+- Adds Template Creation
+	- Template for spawning a custom item
+	- Template for creating an active/use item
+- Adds file handling
+	- Having multiple buffers
+	- Save/Open files
+
+## Version 0.1
+
+This version contains the following features:
+
+- Stupid Code Editor
+- Remote Code Execution via Ctrl+R
+- Ingame debug status under Isaacs feet
+- Game menu
+	- Adding any kind of hearts
+	- Adding any kind of collectible
+	- Spawning any kind of pickup
+	- Control the charge of the active item
+	- Rerolling enemies (D10 effect)
+- Remote console to print debugging messages from the game via "print"
