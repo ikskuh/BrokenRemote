@@ -14,6 +14,19 @@ local function tryConnect(initial)
     client:settimeout(0.01)
     Isaac.DebugString("Done: " .. tostring(client))
     client:send("I am " .. Game():GetPlayer(0):GetName() .. "\n")
+		
+		-- Route all printing to the network connection
+		_G["print"] = function(...)
+			local t = table.pack(...)
+			if #t > 0 then
+				client:send(tostring(t[1]))
+				for i=2,#t do
+					client:send("\t")
+					client:send(tostring(t[i]))
+				end
+				client:send("\n")
+			end
+		end
   else
     client = nil
   end
@@ -59,21 +72,8 @@ function mod:update()
     end
   
     if cmd then
-    
       Isaac.DebugString("Received command: " .. tostring(cmd))
-    
-      local p = print
-      print = function(x, ...)
-        if x == nil then
-          client:send("\n")
-        else
-          client:send(tostring(x))
-          client:send("\t")
-          print(...)
-        end
-      end
       _G["mod"] = mod
-    
       local ok, err = pcall(function()
         local command, err = load("return " .. cmd)
         if command then
@@ -96,8 +96,7 @@ function mod:update()
         client:send(tostring(err or "Unknown error!"))
         client:send("\n")
       end
-        print = p
-        _G["mod"] = nil
+			_G["mod"] = nil
     end
   else 
     if Isaac.GetFrameCount() % 60 == 0 then
@@ -114,6 +113,14 @@ mod:AddCallback(ModCallbacks.MC_POST_RENDER, mod.render)
 
 for i,v in pairs(ModCallbacks) do
 	mod:AddCallback(v, function (...)
-		if mod[i] then mod[i](...) end
+		if mod[i] then
+			local args = table.pack(...)
+			local ok, result = pcall(function()
+				mod[i](table.unpack(args)) 
+			end)
+			if not ok and client then
+				client:send("Failed to execute " .. v .. ": " .. tostring(result) .. "\n")
+			end
+		end
 	end)
 end
