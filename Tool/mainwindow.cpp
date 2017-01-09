@@ -643,3 +643,163 @@ void MainWindow::on_actionBurning_Basement_II_triggered()
 {
     this->changeStage("LevelStage.STAGE1_2", "StageType.STAGETYPE_AFTERBIRTH");
 }
+
+void MainWindow::on_actionThe_Void_triggered()
+{
+    this->changeStage("LevelStage.STAGE7", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionThe_Dark_Room_triggered()
+{
+    this->changeStage("LevelStage.STAGE6", "StageType.STAGETYPE_WOTL");
+}
+
+void MainWindow::on_actionThe_Chest_triggered()
+{
+    this->changeStage("LevelStage.STAGE6", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionSheol_triggered()
+{
+    this->changeStage("LevelStage.STAGE5", "StageType.STAGETYPE_WOTL");
+}
+
+void MainWindow::on_actionThe_Cathedral_triggered()
+{
+    this->changeStage("LevelStage.STAGE5", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionThe_Depths_I_triggered()
+{
+    this->changeStage("LevelStage.STAGE3_1", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionNecropolis_I_triggered()
+{
+    this->changeStage("LevelStage.STAGE3_1", "StageType.STAGETYPE_WOTL");
+}
+
+void MainWindow::on_actionThe_Depths_II_triggered()
+{
+    this->changeStage("LevelStage.STAGE3_2", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionNecropolis_II_triggered()
+{
+    this->changeStage("LevelStage.STAGE3_2", "StageType.STAGETYPE_WOTL");
+}
+
+void MainWindow::on_actionCaves_I_triggered()
+{
+    this->changeStage("LevelStage.STAGE2_1", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionCaves_II_triggered()
+{
+    this->changeStage("LevelStage.STAGE2_2", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionFlooded_Caves_I_triggered()
+{
+    this->changeStage("LevelStage.STAGE2_1", "StageType.STAGETYPE_REBIRTH");
+}
+
+void MainWindow::on_actionFlooded_Caves_II_triggered()
+{
+    this->changeStage("LevelStage.STAGE2_2", "StageType.STAGETYPE_REBIRTH");
+}
+
+void MainWindow::on_actionThe_Womb_I_triggered()
+{
+    this->changeStage("LevelStage.STAGE4_1", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionScarred_Womb_I_triggered()
+{
+    this->changeStage("LevelStage.STAGE4_1", "StageType.STAGETYPE_REBIRTH");
+}
+
+void MainWindow::on_actionUtero_I_triggered()
+{
+    this->changeStage("LevelStage.STAGE4_1", "StageType.STAGETYPE_WOTL");
+}
+
+void MainWindow::on_actionThe_Womb_II_triggered()
+{
+    this->changeStage("LevelStage.STAGE4_2", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionScarred_Womb_II_triggered()
+{
+    this->changeStage("LevelStage.STAGE4_2", "StageType.STAGETYPE_REBIRTH");
+}
+
+void MainWindow::on_actionUtero_II_triggered()
+{
+    this->changeStage("LevelStage.STAGE4_2", "StageType.STAGETYPE_WOTL");
+}
+
+void MainWindow::on_actionDank_Depths_I_triggered()
+{
+    this->changeStage("LevelStage.STAGE3_1", "StageType.STAGETYPE_REBIRTH");
+}
+
+void MainWindow::on_actionDank_Depths_II_triggered()
+{
+    this->changeStage("LevelStage.STAGE3_2", "StageType.STAGETYPE_REBIRTH");
+}
+
+void MainWindow::on_actionHush_triggered()
+{
+    this->changeStage("LevelStage.STAGE4_3", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionCatacombs_I_triggered()
+{
+    this->changeStage("LevelStage.STAGE2_1", "StageType.STAGETYPE_WOTL");
+}
+
+void MainWindow::on_actionCatacombs_II_triggered()
+{
+    this->changeStage("LevelStage.STAGE2_2", "StageType.STAGETYPE_WOTL");
+}
+
+void MainWindow::on_actionGreedBasement_triggered()
+{
+    this->changeStage("LevelStage.STAGE1_GREED", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionGreedCaves_triggered()
+{
+    this->changeStage("LevelStage.STAGE2_GREED", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionGreedDepths_triggered()
+{
+    this->changeStage("LevelStage.STAGE3_GREED", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionGreedSheol_triggered()
+{
+    this->changeStage("LevelStage.STAGE5_GREED", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionGreedTheShop_triggered()
+{
+    this->changeStage("LevelStage.STAGE6_GREED", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionGreedUltraGreed_triggered()
+{
+    this->changeStage("LevelStage.STAGE7_GREED", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionSpecial_Rooms_Greed_triggered()
+{
+    this->changeStage("LevelStage.STAGE6", "StageType.STAGETYPE_AFTERBIRTH");
+}
+
+void MainWindow::on_actionGreedTheWomb_triggered()
+{
+    this->changeStage("LevelStage.STAGE4_GREED", "StageType.STAGETYPE_ORIGINAL");
+}
