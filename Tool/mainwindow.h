@@ -32,6 +32,8 @@ private:
 
     void spawn(QString type, QString subtype, QString variant, bool spawnPickup = true);
 
+    void moveToRoom(QString roomType, bool roomTypeIsActuallyAnIndex = false);
+
     void loadPickups(QMenu * menu, QString fileName, QString pickupVariant);
 
     ScriptEditor * openFile(QString fileName);
@@ -224,6 +226,56 @@ private slots:
     void on_actionSpecial_Rooms_Greed_triggered();
 
     void on_actionGreedTheWomb_triggered();
+
+    void on_actionOpen_Secret_Rooms_triggered();
+
+    void on_actionShow_Layout_triggered();
+
+    void on_actionShow_Secret_Rooms_triggered();
+
+    void on_actionShow_Rooms_triggered();
+
+    void on_actionShow_All_triggered();
+
+    void on_actionTeleportToShop_triggered();
+
+    void on_actionTeleportToSecretRoom_triggered();
+
+    void on_actionTeleportToTreasureRoom_triggered();
+
+    void on_actionTeleportToBossRoom_triggered();
+
+    void on_actionTeleportToStartRoom_triggered();
+
+    void on_actionBlack_Market_triggered();
+
+    void on_actionDice_Room_triggered();
+
+    void on_actionBarren_triggered();
+
+    void on_actionIsaacs_Room_triggered();
+
+    void on_actionBoss_Rush_Room_triggered();
+
+    void on_actionDungeon_triggered();
+
+    void on_actionLibrary_triggered();
+
+    void on_actionChallange_Room_triggered();
+
+    void on_actionError_triggered();
+
+    void on_actionCurse_Room_triggered();
+
+    void on_actionArcade_triggered();
+
+    void on_actionSuper_Secret_Room_triggered();
+
+    void on_actionAngel_Room_triggered();
+
+    void on_actionDevil_Room_triggered();
+
+    void on_actionSacrifice_Room_triggered();
 
 private:
     Ui::MainWindow *ui;

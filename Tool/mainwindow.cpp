@@ -349,6 +349,23 @@ void MainWindow::spawn(QString type, QString subtype, QString variant, bool spaw
     this->executeRemoteCode(code.arg(type, subtype, variant));
 }
 
+void MainWindow::moveToRoom(QString roomType, bool roomTypeIsActuallyAnIndex)
+{
+    QString id;
+    if(roomTypeIsActuallyAnIndex) {
+        id = roomType;
+    } else {
+        id = QString("l:QueryRoomTypeIndex (%1, true, RNG())").arg(roomType);
+    }
+    QString code(
+        "local l = Game():GetLevel()\n"
+        "local idx = %1\n"
+        "if idx ~= -1 then while l:GetCurrentRoomIndex() ~= idx do\n"
+            "l:ChangeRoom(idx)\n"
+        "end else Game():GetPlayer(0):AnimateSad() end"
+        );
+    this->executeRemoteCode(code.arg(id));
+}
 
 void MainWindow::changeStage(QString stage, QString variant)
 {
@@ -530,6 +547,8 @@ void MainWindow::updateActions()
     this->ui->actionSave->setEnabled(hasWindow);
     this->ui->actionSave_As->setEnabled(hasWindow);
     this->ui->actionClose->setEnabled(hasWindow);
+
+    this->ui->actionRun->setEnabled(hasWindow);
 }
 
 void MainWindow::on_actionTry_open_devil_deal_triggered()
@@ -807,4 +826,124 @@ void MainWindow::on_actionGreedTheWomb_triggered()
 void MainWindow::on_actionOpen_Secret_Rooms_triggered()
 {
     this->executeRemoteCode("Game():GetLevel():SetCanSeeEverything(true)");
+}
+
+void MainWindow::on_actionShow_Layout_triggered()
+{
+    this->executeRemoteCode("Game():GetLevel():ApplyMapEffect()");
+}
+
+void MainWindow::on_actionShow_Secret_Rooms_triggered()
+{
+    this->executeRemoteCode("Game():GetLevel():ApplyBlueMapEffect()");
+}
+
+void MainWindow::on_actionShow_Rooms_triggered()
+{
+    this->executeRemoteCode("Game():GetLevel():ApplyCompassEffect()");
+}
+
+void MainWindow::on_actionShow_All_triggered()
+{
+    this->executeRemoteCode("Game():GetLevel():ShowMap() Game():GetLevel():ApplyBlueMapEffect()");
+}
+
+void MainWindow::on_actionTeleportToShop_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_SHOP");
+}
+
+void MainWindow::on_actionTeleportToSecretRoom_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_SECRET");
+}
+
+void MainWindow::on_actionTeleportToTreasureRoom_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_TREASURE");
+}
+
+void MainWindow::on_actionTeleportToBossRoom_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_BOSS", false);
+}
+
+void MainWindow::on_actionTeleportToStartRoom_triggered()
+{
+    this->moveToRoom("Game():GetLevel():GetStartingRoomIndex()", true);
+}
+
+void MainWindow::on_actionBlack_Market_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_BLACK_MARKET");
+}
+
+void MainWindow::on_actionDice_Room_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_DICE");
+}
+
+void MainWindow::on_actionBarren_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_BARREN");
+}
+
+void MainWindow::on_actionIsaacs_Room_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_ISAACS");
+}
+
+void MainWindow::on_actionBoss_Rush_Room_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_BOSSRUSH");
+}
+
+void MainWindow::on_actionDungeon_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_DUNGEON");
+}
+
+void MainWindow::on_actionLibrary_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_LIBRARY");
+}
+
+void MainWindow::on_actionChallange_Room_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_CHALLENGE");
+}
+
+void MainWindow::on_actionError_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_ERROR");
+}
+
+void MainWindow::on_actionCurse_Room_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_CURSE");
+}
+
+void MainWindow::on_actionArcade_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_ARCADE");
+}
+
+void MainWindow::on_actionSuper_Secret_Room_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_SUPERSECRET");
+}
+
+void MainWindow::on_actionAngel_Room_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_ANGEL");
+}
+
+void MainWindow::on_actionDevil_Room_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_DEVIL");
+}
+
+void MainWindow::on_actionSacrifice_Room_triggered()
+{
+    this->moveToRoom("RoomType.ROOM_SACRIFICE");
 }

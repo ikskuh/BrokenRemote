@@ -2,19 +2,14 @@
 
 - MDI Interface
 	- Create file from template
-		- Passive Item
 		- Trinket
 		- Card
 		- Pill
 - Provide some experimental items
-  - Pill
+  - Pills
   - Card
-- Jump List
-	- Teleport to:
-		- Treasure Room
-		- Angel Room
-		- Devil Room
-		- 
+- Improve log message protocol
+	- Enable/disable options that are available
 - Test the Room Tool
 	- Open Devil Deal/Mega Satan/Boss Rush/Blue Womb/The Void
 	- Reroll Level Collectibles

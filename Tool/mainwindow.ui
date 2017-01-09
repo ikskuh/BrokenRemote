@@ -325,10 +325,25 @@
       <string>Teleport to...</string>
      </property>
      <addaction name="actionTeleportToStartRoom"/>
+     <addaction name="actionTeleportToShop"/>
      <addaction name="actionTeleportToBossRoom"/>
      <addaction name="actionTeleportToTreasureRoom"/>
      <addaction name="actionTeleportToSecretRoom"/>
-     <addaction name="actionTeleportToShop"/>
+     <addaction name="actionAngel_Room"/>
+     <addaction name="actionDevil_Room"/>
+     <addaction name="actionSuper_Secret_Room"/>
+     <addaction name="actionArcade"/>
+     <addaction name="actionSacrifice_Room"/>
+     <addaction name="actionCurse_Room"/>
+     <addaction name="actionError"/>
+     <addaction name="actionChallange_Room"/>
+     <addaction name="actionLibrary"/>
+     <addaction name="actionDungeon"/>
+     <addaction name="actionBoss_Rush_Room"/>
+     <addaction name="actionIsaacs_Room"/>
+     <addaction name="actionBarren"/>
+     <addaction name="actionDice_Room"/>
+     <addaction name="actionBlack_Market"/>
      <addaction name="separator"/>
      <addaction name="actionRandom_Teleport"/>
      <addaction name="actionRandom_Teleport_No_Error_Room"/>
@@ -338,8 +353,8 @@
       <string>Apply map effects</string>
      </property>
      <addaction name="actionShow_Layout"/>
-     <addaction name="actionShow_Secret_Rooms"/>
      <addaction name="actionShow_Rooms"/>
+     <addaction name="actionShow_Secret_Rooms"/>
      <addaction name="actionShow_All"/>
      <addaction name="separator"/>
      <addaction name="actionOpen_Secret_Rooms"/>
@@ -1216,6 +1231,81 @@
   <action name="actionGreedTheWomb">
    <property name="text">
     <string>The Womb</string>
+   </property>
+  </action>
+  <action name="actionAngel_Room">
+   <property name="text">
+    <string>Angel Room</string>
+   </property>
+  </action>
+  <action name="actionDevil_Room">
+   <property name="text">
+    <string>Devil Room</string>
+   </property>
+  </action>
+  <action name="actionSuper_Secret_Room">
+   <property name="text">
+    <string>Super Secret Room</string>
+   </property>
+  </action>
+  <action name="actionArcade">
+   <property name="text">
+    <string>Arcade Room</string>
+   </property>
+  </action>
+  <action name="actionCurse_Room">
+   <property name="text">
+    <string>Curse Room</string>
+   </property>
+  </action>
+  <action name="actionError">
+   <property name="text">
+    <string>Error Room</string>
+   </property>
+  </action>
+  <action name="actionChallange_Room">
+   <property name="text">
+    <string>Challange Room</string>
+   </property>
+  </action>
+  <action name="actionLibrary">
+   <property name="text">
+    <string>Library</string>
+   </property>
+  </action>
+  <action name="actionDungeon">
+   <property name="text">
+    <string>Dungeon</string>
+   </property>
+  </action>
+  <action name="actionBoss_Rush_Room">
+   <property name="text">
+    <string>Boss Rush Room</string>
+   </property>
+  </action>
+  <action name="actionIsaacs_Room">
+   <property name="text">
+    <string>Isaacs Room</string>
+   </property>
+  </action>
+  <action name="actionBarren">
+   <property name="text">
+    <string>Barren</string>
+   </property>
+  </action>
+  <action name="actionDice_Room">
+   <property name="text">
+    <string>Dice Room</string>
+   </property>
+  </action>
+  <action name="actionBlack_Market">
+   <property name="text">
+    <string>Black Market</string>
+   </property>
+  </action>
+  <action name="actionSacrifice_Room">
+   <property name="text">
+    <string>Sacrifice Room</string>
    </property>
   </action>
  </widget>
