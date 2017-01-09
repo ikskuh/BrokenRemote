@@ -28,6 +28,8 @@ public:
 private:
     void sendRaw(QString message);
 
+    void changeStage(QString stage, QString variant);
+
     void spawn(QString type, QString subtype, QString variant, bool spawnPickup = true);
 
     void loadPickups(QMenu * menu, QString fileName, QString pickupVariant);
@@ -146,6 +148,18 @@ private slots:
     void on_actionAbout_triggered();
 
     void on_actionTile_triggered();
+
+    void on_actionBurning_Basement_II_triggered();
+
+    void on_actionBasement_I_triggered();
+
+    void on_actionCellar_I_triggered();
+
+    void on_actionBurning_Basement_I_triggered();
+
+    void on_actionBasement_II_triggered();
+
+    void on_actionCellar_II_triggered();
 
 private:
     Ui::MainWindow *ui;

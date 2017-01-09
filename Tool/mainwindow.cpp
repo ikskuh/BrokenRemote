@@ -349,6 +349,15 @@ void MainWindow::spawn(QString type, QString subtype, QString variant, bool spaw
     this->executeRemoteCode(code.arg(type, subtype, variant));
 }
 
+
+void MainWindow::changeStage(QString stage, QString variant)
+{
+    QString script(
+        "Game():GetLevel():SetStage(%1, %2)\n"
+        "Game():StartStageTransition(true, 1)");
+    this->executeRemoteCode(script.arg(stage, variant));
+}
+
 void MainWindow::on_clientConnected()
 {
     QTcpSocket * sock = this->server->nextPendingConnection();
@@ -603,4 +612,34 @@ void MainWindow::on_actionAbout_triggered()
 void MainWindow::on_actionTile_triggered()
 {
     this->ui->mdiArea->tileSubWindows();
+}
+
+void MainWindow::on_actionBasement_I_triggered()
+{
+    this->changeStage("LevelStage.STAGE1_1", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionBasement_II_triggered()
+{
+    this->changeStage("LevelStage.STAGE1_2", "StageType.STAGETYPE_ORIGINAL");
+}
+
+void MainWindow::on_actionCellar_I_triggered()
+{
+    this->changeStage("LevelStage.STAGE1_1", "StageType.STAGETYPE_WOTL");
+}
+
+void MainWindow::on_actionCellar_II_triggered()
+{
+    this->changeStage("LevelStage.STAGE1_2", "StageType.STAGETYPE_WOTL");
+}
+
+void MainWindow::on_actionBurning_Basement_I_triggered()
+{
+    this->changeStage("LevelStage.STAGE1_1", "StageType.STAGETYPE_AFTERBIRTH");
+}
+
+void MainWindow::on_actionBurning_Basement_II_triggered()
+{
+    this->changeStage("LevelStage.STAGE1_2", "StageType.STAGETYPE_AFTERBIRTH");
 }

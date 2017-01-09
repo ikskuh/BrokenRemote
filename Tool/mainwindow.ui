@@ -128,7 +128,7 @@
      <x>0</x>
      <y>0</y>
      <width>702</width>
-     <height>21</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -300,12 +300,6 @@
     <property name="title">
      <string>Room</string>
     </property>
-    <widget class="QMenu" name="menuJump_to">
-     <property name="title">
-      <string>Jump to</string>
-     </property>
-     <addaction name="actionStage_Template"/>
-    </widget>
     <addaction name="actionTry_open_devil_deal"/>
     <addaction name="actionTry_open_boss_rush_door"/>
     <addaction name="actionTry_open_mega_satan"/>
@@ -315,10 +309,6 @@
     <addaction name="actionRestock_Shop_Partial"/>
     <addaction name="actionRestock_Shop_Full"/>
     <addaction name="actionShuffle_Shop"/>
-    <addaction name="separator"/>
-    <addaction name="menuJump_to"/>
-    <addaction name="actionRandom_Teleport"/>
-    <addaction name="actionRandom_Teleport_No_Error_Room"/>
    </widget>
    <widget class="QMenu" name="menuOptions">
     <property name="title">
@@ -326,9 +316,149 @@
     </property>
     <addaction name="actionPrint_code_in_system_log"/>
    </widget>
+   <widget class="QMenu" name="menuLevel">
+    <property name="title">
+     <string>Level</string>
+    </property>
+    <widget class="QMenu" name="menuChange_Stage">
+     <property name="title">
+      <string>Change Stage</string>
+     </property>
+     <widget class="QMenu" name="menuSection_1">
+      <property name="title">
+       <string>Section 1</string>
+      </property>
+      <addaction name="actionBasement_I"/>
+      <addaction name="actionBurning_Basement_I"/>
+      <addaction name="actionCellar_I"/>
+      <addaction name="separator"/>
+      <addaction name="actionBasement_II"/>
+      <addaction name="actionBurning_Basement_II"/>
+      <addaction name="actionCellar_II"/>
+     </widget>
+     <widget class="QMenu" name="menuSection_2">
+      <property name="title">
+       <string>Section 2</string>
+      </property>
+      <addaction name="actionCaves_I"/>
+      <addaction name="actionFlooded_Caves_I"/>
+      <addaction name="actionCatacombs_I"/>
+      <addaction name="separator"/>
+      <addaction name="actionCaves_II"/>
+      <addaction name="actionFlooded_Caves_II"/>
+      <addaction name="actionCatacombs_II"/>
+     </widget>
+     <widget class="QMenu" name="menuSection_3">
+      <property name="title">
+       <string>Section 3</string>
+      </property>
+      <addaction name="actionThe_Depths_I"/>
+      <addaction name="actionDank_Depths_I"/>
+      <addaction name="actionNecropolis_I"/>
+      <addaction name="separator"/>
+      <addaction name="actionThe_Depths_II"/>
+      <addaction name="actionNecropolis_II"/>
+      <addaction name="actionDank_Depths_II"/>
+     </widget>
+     <widget class="QMenu" name="menuSection_4">
+      <property name="title">
+       <string>Section 4</string>
+      </property>
+      <addaction name="actionThe_Womb_I"/>
+      <addaction name="actionScarred_Womb_I"/>
+      <addaction name="actionUtero_I"/>
+      <addaction name="separator"/>
+      <addaction name="actionThe_Womb_II"/>
+      <addaction name="actionScarred_Womb_II"/>
+      <addaction name="actionUtero_II"/>
+      <addaction name="separator"/>
+      <addaction name="actionHush"/>
+     </widget>
+     <widget class="QMenu" name="menuSection_5">
+      <property name="title">
+       <string>Section 5</string>
+      </property>
+      <addaction name="actionThe_Cathedral"/>
+      <addaction name="actionSatan"/>
+     </widget>
+     <widget class="QMenu" name="menuSection_6">
+      <property name="title">
+       <string>Section 6</string>
+      </property>
+      <addaction name="actionThe_Chest"/>
+      <addaction name="actionThe_Dark_Room"/>
+     </widget>
+     <widget class="QMenu" name="menuSection_7">
+      <property name="title">
+       <string>Section 7</string>
+      </property>
+      <addaction name="actionThe_Void"/>
+     </widget>
+     <widget class="QMenu" name="menuGreed_Mode">
+      <property name="title">
+       <string>Greed Mode</string>
+      </property>
+      <addaction name="actionBasement"/>
+      <addaction name="actionCatacombs"/>
+      <addaction name="actionDepths"/>
+      <addaction name="actionSheol"/>
+      <addaction name="actionThe_Shop"/>
+      <addaction name="actionUltra_Greed"/>
+     </widget>
+     <widget class="QMenu" name="menuSpecial">
+      <property name="title">
+       <string>Special</string>
+      </property>
+      <addaction name="actionSpecial_Rooms_Greed"/>
+     </widget>
+     <addaction name="menuSection_1"/>
+     <addaction name="menuSection_2"/>
+     <addaction name="menuSection_3"/>
+     <addaction name="separator"/>
+     <addaction name="menuSection_4"/>
+     <addaction name="menuSection_5"/>
+     <addaction name="separator"/>
+     <addaction name="menuSection_6"/>
+     <addaction name="separator"/>
+     <addaction name="menuSection_7"/>
+     <addaction name="separator"/>
+     <addaction name="menuGreed_Mode"/>
+     <addaction name="separator"/>
+     <addaction name="menuSpecial"/>
+    </widget>
+    <widget class="QMenu" name="menuTeleport_to">
+     <property name="title">
+      <string>Teleport to...</string>
+     </property>
+     <addaction name="actionStart_Room"/>
+     <addaction name="actionBoss_Room"/>
+     <addaction name="actionGolden_Room"/>
+     <addaction name="actionSecret_Room"/>
+     <addaction name="actionShop"/>
+    </widget>
+    <widget class="QMenu" name="menuApply_map_effects">
+     <property name="title">
+      <string>Apply map effects</string>
+     </property>
+     <addaction name="actionShow_Layout"/>
+     <addaction name="actionShow_Secret_Rooms"/>
+     <addaction name="actionShow_Rooms"/>
+     <addaction name="actionShow_All"/>
+     <addaction name="separator"/>
+     <addaction name="actionOpen_Secret_Rooms"/>
+    </widget>
+    <addaction name="actionRandom_Teleport"/>
+    <addaction name="actionRandom_Teleport_No_Error_Room"/>
+    <addaction name="menuTeleport_to"/>
+    <addaction name="separator"/>
+    <addaction name="menuChange_Stage"/>
+    <addaction name="separator"/>
+    <addaction name="menuApply_map_effects"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuGame"/>
    <addaction name="menuRoom"/>
+   <addaction name="menuLevel"/>
    <addaction name="menuScript"/>
    <addaction name="menuOptions"/>
   </widget>
@@ -839,6 +969,241 @@
   <action name="actionAbout">
    <property name="text">
     <string>About...</string>
+   </property>
+  </action>
+  <action name="actionBasement_I">
+   <property name="text">
+    <string>Basement I</string>
+   </property>
+  </action>
+  <action name="actionCellar_I">
+   <property name="text">
+    <string>Cellar I</string>
+   </property>
+  </action>
+  <action name="actionBurning_Basement_I">
+   <property name="text">
+    <string>Burning Basement I</string>
+   </property>
+  </action>
+  <action name="actionBasement_II">
+   <property name="text">
+    <string>Basement II</string>
+   </property>
+  </action>
+  <action name="actionBurning_Basement_II">
+   <property name="text">
+    <string>Burning Basement II</string>
+   </property>
+  </action>
+  <action name="actionCellar_II">
+   <property name="text">
+    <string>Cellar II</string>
+   </property>
+  </action>
+  <action name="actionThe_Depths_I">
+   <property name="text">
+    <string>The Depths I</string>
+   </property>
+  </action>
+  <action name="actionNecropolis_I">
+   <property name="text">
+    <string>Necropolis I</string>
+   </property>
+  </action>
+  <action name="actionThe_Depths_II">
+   <property name="text">
+    <string>The Depths II</string>
+   </property>
+  </action>
+  <action name="actionNecropolis_II">
+   <property name="text">
+    <string>Necropolis II</string>
+   </property>
+  </action>
+  <action name="actionCaves_I">
+   <property name="text">
+    <string>Caves I</string>
+   </property>
+  </action>
+  <action name="actionCaves_II">
+   <property name="text">
+    <string>Caves II</string>
+   </property>
+  </action>
+  <action name="actionFlooded_Caves_II">
+   <property name="text">
+    <string>Flooded Caves II</string>
+   </property>
+  </action>
+  <action name="actionFlooded_Caves_I">
+   <property name="text">
+    <string>Flooded Caves I</string>
+   </property>
+  </action>
+  <action name="actionThe_Womb_I">
+   <property name="text">
+    <string>The Womb I</string>
+   </property>
+  </action>
+  <action name="actionScarred_Womb_I">
+   <property name="text">
+    <string>Scarred Womb I</string>
+   </property>
+  </action>
+  <action name="actionUtero_I">
+   <property name="text">
+    <string>Utero I</string>
+   </property>
+  </action>
+  <action name="actionThe_Womb_II">
+   <property name="text">
+    <string>The Womb II</string>
+   </property>
+  </action>
+  <action name="actionScarred_Womb_II">
+   <property name="text">
+    <string>Scarred Womb II</string>
+   </property>
+  </action>
+  <action name="actionUtero_II">
+   <property name="text">
+    <string>Utero II</string>
+   </property>
+  </action>
+  <action name="actionThe_Cathedral">
+   <property name="text">
+    <string>The Cathedral</string>
+   </property>
+  </action>
+  <action name="actionSatan">
+   <property name="text">
+    <string>Sheol</string>
+   </property>
+  </action>
+  <action name="actionThe_Chest">
+   <property name="text">
+    <string>The Chest</string>
+   </property>
+  </action>
+  <action name="actionThe_Dark_Room">
+   <property name="text">
+    <string>The Dark Room</string>
+   </property>
+  </action>
+  <action name="actionThe_Void">
+   <property name="text">
+    <string>The Void</string>
+   </property>
+  </action>
+  <action name="actionDank_Depths_I">
+   <property name="text">
+    <string>Dank Depths I</string>
+   </property>
+  </action>
+  <action name="actionDank_Depths_II">
+   <property name="text">
+    <string>Dank Depths II</string>
+   </property>
+  </action>
+  <action name="actionHush">
+   <property name="text">
+    <string>Hush</string>
+   </property>
+  </action>
+  <action name="actionCatacombs_I">
+   <property name="text">
+    <string>Catacombs I</string>
+   </property>
+  </action>
+  <action name="actionCatacombs_II">
+   <property name="text">
+    <string>Catacombs II</string>
+   </property>
+  </action>
+  <action name="actionBasement">
+   <property name="text">
+    <string>Basement</string>
+   </property>
+  </action>
+  <action name="actionDepths">
+   <property name="text">
+    <string>Depths</string>
+   </property>
+  </action>
+  <action name="actionCatacombs">
+   <property name="text">
+    <string>Caves</string>
+   </property>
+  </action>
+  <action name="actionSheol">
+   <property name="text">
+    <string>Sheol</string>
+   </property>
+  </action>
+  <action name="actionThe_Shop">
+   <property name="text">
+    <string>The Shop</string>
+   </property>
+  </action>
+  <action name="actionUltra_Greed">
+   <property name="text">
+    <string>Ultra Greed</string>
+   </property>
+  </action>
+  <action name="actionSpecial_Rooms_Greed">
+   <property name="text">
+    <string>Special Rooms (Greed)</string>
+   </property>
+  </action>
+  <action name="actionStart_Room">
+   <property name="text">
+    <string>Start Room</string>
+   </property>
+  </action>
+  <action name="actionBoss_Room">
+   <property name="text">
+    <string>Boss Room</string>
+   </property>
+  </action>
+  <action name="actionGolden_Room">
+   <property name="text">
+    <string>Golden Room</string>
+   </property>
+  </action>
+  <action name="actionSecret_Room">
+   <property name="text">
+    <string>Secret Room</string>
+   </property>
+  </action>
+  <action name="actionShop">
+   <property name="text">
+    <string>Shop</string>
+   </property>
+  </action>
+  <action name="actionShow_Layout">
+   <property name="text">
+    <string>Show Layout</string>
+   </property>
+  </action>
+  <action name="actionShow_Secret_Rooms">
+   <property name="text">
+    <string>Show Secret Rooms</string>
+   </property>
+  </action>
+  <action name="actionShow_Rooms">
+   <property name="text">
+    <string>Show Rooms</string>
+   </property>
+  </action>
+  <action name="actionShow_All">
+   <property name="text">
+    <string>Show All</string>
+   </property>
+  </action>
+  <action name="actionOpen_Secret_Rooms">
+   <property name="text">
+    <string>Open Secret Rooms</string>
    </property>
   </action>
  </widget>
