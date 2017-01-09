@@ -14,6 +14,8 @@ Additions:
   - Teleport to any special room available
 - New Templates
   - Passive Item
+- More icons!
+- Windows only: Application Icon
 
 ## Version 0.2
 

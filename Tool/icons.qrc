@@ -82,5 +82,6 @@
         <file>icons/stage-utero.png</file>
         <file>icons/stage-void.png</file>
         <file>icons/stage-womb.png</file>
+        <file>icons/window-logo.png</file>
     </qresource>
 </RCC>

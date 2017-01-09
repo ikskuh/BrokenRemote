@@ -34,3 +34,10 @@ FORMS    += mainwindow.ui
 
 RESOURCES += \
     icons.qrc
+
+DISTFILES += \
+    app.rc
+
+win32 {
+    RC_FILE = app.rc
+}

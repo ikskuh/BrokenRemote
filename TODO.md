@@ -1,8 +1,5 @@
 # TODO List
 
-- Icons
-	- Map Effects
-	- 
 - Create file from template
 	- Trinket
 	- Card
@@ -16,3 +13,4 @@
 	- Open Devil Deal/Mega Satan/Boss Rush/Blue Womb/The Void
 	- Reroll Level Collectibles
 	- Reroll Level Pickups
+- In-Tool-Script-Host with Lua useful?

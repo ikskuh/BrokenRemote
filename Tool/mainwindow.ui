@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>BrokenRemote</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="icons.qrc">
+    <normaloff>:/icons/window-logo.png</normaloff>:/icons/window-logo.png</iconset>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QFormLayout" name="formLayout">
     <property name="leftMargin">
@@ -56,6 +60,9 @@
    <addaction name="actionDischarge"/>
    <addaction name="actionIncrease_Charge"/>
    <addaction name="actionFull_Charge"/>
+   <addaction name="separator"/>
+   <addaction name="actionShow_All"/>
+   <addaction name="separator"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QDockWidget" name="logWidget">
