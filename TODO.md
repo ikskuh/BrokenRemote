@@ -1,11 +1,6 @@
 # TODO List
 
-- Create file from template
-	- Card
-	- Pill
-- Provide some experimental items
-  - Pills
-  - Card
+- Cards don't work really good... Wait for fix?!
 - Improve log message protocol
 	- Enable/disable options that are available
   - Create item listings from ingame data

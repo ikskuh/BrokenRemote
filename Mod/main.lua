@@ -75,7 +75,6 @@ local function sendRoomList()
     local idx1 = Game():GetLevel():QueryRoomTypeIndex(t, false, rng)
     rng:Next()
     local idx2 = Game():GetLevel():QueryRoomTypeIndex(t, false, rng)
-    print("room", t, idx1, idx2, idx1 == idx2)
     return (idx1 ~= -1) and (idx1 == idx2)
   end
   local data = { 
