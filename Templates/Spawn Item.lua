@@ -1,7 +1,9 @@
+-------------------------------------------------------------------------------
 --
 -- This code spawns an item near the player.
 -- The item can be spawned by name or by id
 --
+-------------------------------------------------------------------------------
 
 -- Set this to false to get the item by
 -- CollectibleType instead of the item name

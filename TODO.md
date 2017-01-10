@@ -10,7 +10,6 @@
 - Improve log message protocol
 	- Enable/disable options that are available
   - Create item listings from ingame data
-  - 
 - Test the Room Tool
 	- Open Devil Deal/Mega Satan/Boss Rush/Blue Womb/The Void
 	- Reroll Level Collectibles

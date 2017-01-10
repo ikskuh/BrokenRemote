@@ -1,5 +1,17 @@
+-------------------------------------------------------------------------------
+--
+-- This script provides the basic implementation for a passive item.
+-- The item will do a massive(!) damage up
+--
+-------------------------------------------------------------------------------
+
 -- Query our item id as we can't hardcode it.
 local itemId = Isaac.GetItemIdByName("Mod Passive 1")
+if itemId == -1 then
+	-- Don't do stuff when the item is not found.
+	Game():GetPlayer(0):AnimateSad()
+	return;
+end
 
 function mod:MC_EVALUATE_CACHE(player, cache)
 	if player:HasCollectible(itemId) == false then
