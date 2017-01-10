@@ -1,7 +1,6 @@
 # TODO List
 
 - Create file from template
-	- Trinket
 	- Card
 	- Pill
 - Provide some experimental items

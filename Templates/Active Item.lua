@@ -7,7 +7,7 @@
 
 
 -- Replace the parameter with your own item name
-local myItemId = Isaac.GetItemIdByName("Mod Active 1")
+local itemId = Isaac.GetItemIdByName("Mod Active 1")
 if itemId == -1 then
 	-- Don't do stuff when the item wasn't found
 	Game():GetPlayer(0):AnimateSad()
@@ -15,8 +15,8 @@ if itemId == -1 then
 end
 
 -- Register our mod callback for the use with BrokenRemote
-function mod:MC_USE_ITEM(itemId, rng)
-	if itemId ~= myItemId then
+function mod:MC_USE_ITEM(id, rng)
+	if id ~= itemId then
 		return
 	end
 	
