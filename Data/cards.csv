@@ -18,7 +18,6 @@ Card.CARD_HOLY
 Card.CARD_EMERGENCY_CONTACT	Emergency Contact
 Card.CARD_DICE_SHARD	Dice Shard
 Card.CARD_JOKER	The Joker
-Card.CARD_RANDOM	-Random Card
 Card.CARD_HUMANITY	A Card against Humanity
 Card.CARD_QUESTIONMARK	Questionmark
 Card.CARD_GET_OUT_OF_JAIL	Get out of Jail (Free)

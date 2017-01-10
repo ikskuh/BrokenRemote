@@ -1,0 +1,21 @@
+<pocketitems>
+	<card
+    name="Mod Card 1"
+    description="Implement your dreams!" 
+    hud="33_MysteryCard" />
+	<card
+    name="Mod Card 2"
+    description="Implement your dreams!" 
+    hud="33_MysteryCard" />
+	
+  <rune
+    name="Mod Rune 1"
+    description="Implement your dreams!" />
+	<rune
+    name="Mod Rune 2"
+    description="Implement your dreams!" />
+	
+	<pilleffect name="Mod Pill 1" />
+	<pilleffect name="Mod Pill 2" />
+	
+</pocketitems>

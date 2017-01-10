@@ -4,6 +4,10 @@
 
 Changes:
 - Game->Tool protocol changes from raw lines to json encoded data
+- "Teleport to" menu now only has possible rooms enabled (most probably)
+- New Templates
+  - Trinket
+  - Pill
 - 
 
 ## Version 0.3
