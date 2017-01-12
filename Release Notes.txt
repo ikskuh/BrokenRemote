@@ -4,11 +4,14 @@
 
 Changes:
 - Game->Tool protocol changes from raw lines to json encoded data
-- "Teleport to" menu now only has possible rooms enabled (most probably)
+- Automatic action enable/disable system
+	- "Teleport to" list now only has available rooms enabled
+	- Active item charge modification
 - New Templates
   - Trinket
   - Pill
-- 
+- New experimental items
+	- `Mod Pill 1` and `Mod Pill 2`
 
 ## Version 0.3
 

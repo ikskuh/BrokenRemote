@@ -498,7 +498,7 @@ void MainWindow::on_actionAdd_Golden_Key_triggered()
 
 void MainWindow::on_actionFull_Charge_triggered()
 {
-    this->executeRemoteCode("Game():GetPlayer(0):SetActiveCharge(1000)");
+    this->executeRemoteCode("Game():GetPlayer(0):FullCharge()");
 }
 
 void MainWindow::on_actionIncrease_Charge_triggered()

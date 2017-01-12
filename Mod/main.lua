@@ -5,10 +5,12 @@ local json = require "json"
 local client
 
 local function sendMessage(msg)
-  if type(msg) ~= "table" then
-    msg = { type="msg" , msg=tostring(msg) }
-  end
-  client:send(json.encode(msg).."\n")
+	if client then
+		if type(msg) ~= "table" then
+			msg = { type="msg" , msg=tostring(msg) }
+		end
+		client:send(json.encode(msg).."\n")
+	end
 end
 
 local function tryConnect(initial)
@@ -33,7 +35,7 @@ local function tryConnect(initial)
 				sendMessage(msg)
 			end
 		end
-    
+
     print("I am " .. Game():GetPlayer(0):GetName())
   else
     client = nil
@@ -66,6 +68,17 @@ function mod:render()
 		0.0,
 		1.0)
 
+end
+
+local function sendChargeStatus()
+	local p = Game():GetPlayer(0)
+	local msg = {
+		type = "active-charge",
+		hasActiveItem = (p:GetActiveItem() ~= -1),
+		currentCharge = p:GetActiveCharge(),
+		needsCharge = p:NeedsCharge()
+	}
+	sendMessage(msg)
 end
 
 local function sendRoomList()
@@ -128,6 +141,8 @@ local function sendRoomList()
   sendMessage(data)
 end
 
+local lastItemCharge, lastActiveItem
+
 function mod:update()
   if client then
   
@@ -165,13 +180,22 @@ function mod:update()
       if not ok then
         sendMessage { type ="err", msg = err or "Unknown error!" }
       end
-			_G["mod"] = nil
+	_G["mod"] = nil
     end
   else 
     if Isaac.GetFrameCount() % 60 == 0 then
       tryConnect(false)
     end
   end
+
+	-- Watch the current item charge
+	local currentCharge = Game():GetPlayer(0):GetActiveCharge()
+	local currentActiveItem = Game():GetPlayer(0):GetActiveItem()
+	if lastItemCharge ~= currentCharge or lastActiveItem ~= currentActiveItem then
+		sendChargeStatus()
+		lastItemCharge = currentCharge
+		lastActiveItem = currentActiveItem
+	end
 end
 
 mod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, mod.init)

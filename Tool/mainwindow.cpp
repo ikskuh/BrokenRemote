@@ -440,6 +440,9 @@ void MainWindow::on_readReady()
         else if(type == "roomlist") {
             this->setTeleportListStateFromJson(obj);
         }
+        else if(type == "active-charge") {
+            this->setActiveItemChargeOptionsFromJson(obj);
+        }
         else {
             this->log("Received unsupported message", "NETWORK");
         }
@@ -500,5 +503,22 @@ void MainWindow::setTeleportListStateFromJson(QJsonObject & obj)
     for(int i = array.size(); i < roomCount; i++)
     {
         alist[i]->setEnabled(false);
+    }
+}
+
+void MainWindow::setActiveItemChargeOptionsFromJson(QJsonObject & obj)
+{
+    bool hasActiveItem = obj["hasActiveItem"].toBool(false);
+    int currentCharge = obj["currentCharge"].toInt(0);
+    bool needsCharge = obj["needsCharge"].toBool(true);
+
+    if(hasActiveItem) {
+        this->ui->actionFull_Charge->setEnabled(needsCharge);
+        this->ui->actionIncrease_Charge->setEnabled(needsCharge);
+        this->ui->actionDischarge->setEnabled(currentCharge > 0);
+    } else {
+        this->ui->actionFull_Charge->setEnabled(false);
+        this->ui->actionIncrease_Charge->setEnabled(false);
+        this->ui->actionDischarge->setEnabled(false);
     }
 }

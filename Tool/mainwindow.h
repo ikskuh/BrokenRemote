@@ -60,6 +60,8 @@ private:
 
     void setTeleportListStateFromJson(QJsonObject & obj);
 
+    void setActiveItemChargeOptionsFromJson(QJsonObject & obj);
+
 private slots:
     void on_actionQuit_triggered();
 
