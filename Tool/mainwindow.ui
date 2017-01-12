@@ -135,7 +135,7 @@
      <x>0</x>
      <y>0</y>
      <width>702</width>
-     <height>21</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -312,6 +312,8 @@
     <addaction name="actionTry_open_mega_satan"/>
     <addaction name="actionOpen_The_Void"/>
     <addaction name="actionOpen_Blue_Womb"/>
+    <addaction name="separator"/>
+    <addaction name="actionOpen_and_unlock_all_doors"/>
     <addaction name="separator"/>
     <addaction name="actionRestock_Shop_Partial"/>
     <addaction name="actionRestock_Shop_Full"/>
@@ -1523,6 +1525,11 @@
    </property>
    <property name="text">
     <string>Mini Boss Room</string>
+   </property>
+  </action>
+  <action name="actionOpen_and_unlock_all_doors">
+   <property name="text">
+    <string>Open and unlock all doors</string>
    </property>
   </action>
  </widget>

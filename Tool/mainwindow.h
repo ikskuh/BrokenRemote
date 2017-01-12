@@ -287,6 +287,8 @@ private slots:
 
     void on_actionMiniboss_Romm_triggered();
 
+    void on_actionOpen_and_unlock_all_doors_triggered();
+
 private:
     Ui::MainWindow *ui;
     QTcpServer * server;

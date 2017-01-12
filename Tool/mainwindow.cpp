@@ -522,3 +522,17 @@ void MainWindow::setActiveItemChargeOptionsFromJson(QJsonObject & obj)
         this->ui->actionDischarge->setEnabled(false);
     }
 }
+
+void MainWindow::on_actionOpen_and_unlock_all_doors_triggered()
+{
+    this->executeRemoteCode(
+        "local r = Game():GetRoom()\n"
+        "local slots = { DoorSlot.UP0, DoorSlot.DOWN0, DoorSlot.LEFT0, DoorSlot.RIGHT0, DoorSlot.UP1, DoorSlot.DOWN1, DoorSlot.LEFT1, DoorSlot.RIGHT1, }\n"
+        "for i,slot in ipairs(slots) do\n"
+            "local door = r:GetDoor(slot)\n"
+            "if door then\n"
+                "door:SetLocked(false)\n"
+                "door:Open()\n"
+            "end\n"
+        "end\n");
+}
