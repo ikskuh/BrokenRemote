@@ -16,5 +16,5 @@
 	- Reroll Level Collectibles
 	- Reroll Level Pickups
 - D6-Effect
-- Force-Open any special doors (devil deal, mega satan, boss rush, ...)
 - Room Modifications
+- Export-Function (Creates a mod-script that will work without BrokenRemote)
