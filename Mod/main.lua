@@ -40,7 +40,7 @@ local function tryConnect(initial)
 
     print("I am " .. Game():GetPlayer(0):GetName())
 		
-		onConnect()
+		if onConnect then onConnect() end
   else
     client = nil
   end
@@ -238,6 +238,11 @@ function mod:update()
 		lastHealth.soul = p:GetSoulHearts()
 		lastHealth.black = p:GetBlackHearts()
 		lastHealth.gold = p:GetGoldenHearts()
+	end
+	
+	if Game():GetLevel():GetAbsoluteStage() ~= lastStage then
+		if onConnect then onConnect() end
+		lastStage = Game():GetLevel():GetAbsoluteStage()
 	end
 end
 

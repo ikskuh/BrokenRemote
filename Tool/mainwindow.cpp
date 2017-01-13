@@ -429,8 +429,7 @@ void MainWindow::on_readReady()
         QJsonDocument doc = QJsonDocument::fromJson(linebuf);
 
         QJsonObject obj = doc.object();
-        qDebug() << obj;
-
+        qDebug() << "json message" << obj;
         QString type = obj["type"].toString();
 
         if(type == "msg") {
@@ -536,8 +535,6 @@ void MainWindow::setHealthOptionsFromJson(QJsonObject & obj)
     int black = obj["black"].toInt();
     int gold = obj["gold"].toInt(0);
     int maxSoul = 24 - max;
-
-    qDebug() << maxSoul << obj;
 
     this->ui->actionAdd_Half_Container->setEnabled(max < 24);
     this->ui->actionAdd_Container->setEnabled(max < 24);

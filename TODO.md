@@ -2,10 +2,6 @@
 
 ## Roadmap
 
-### 0.4
-- Improve log message protocol
-	- Send game state at the start of each new stage
-
 ### 0.5
 
 - Improve scripting API
