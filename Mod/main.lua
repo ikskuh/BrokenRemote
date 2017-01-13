@@ -6,6 +6,8 @@ local client
 
 local onConnect
 
+local initialInit = false
+
 local function sendMessage(msg)
 	if client then
 		if type(msg) ~= "table" then
@@ -40,7 +42,8 @@ local function tryConnect(initial)
 
     print("I am " .. Game():GetPlayer(0):GetName())
 		
-		if onConnect then onConnect() end
+		-- if onConnect then onConnect("init") end
+		initialInit = true
   else
     client = nil
   end
@@ -217,6 +220,10 @@ function mod:update()
     end
   end
 
+	if Isaac.GetFrameCount() < 10 then
+		return
+	end
+
 	-- Watch the current item charge
 	local currentCharge = Game():GetPlayer(0):GetActiveCharge()
 	local currentActiveItem = Game():GetPlayer(0):GetActiveItem()
@@ -240,13 +247,14 @@ function mod:update()
 		lastHealth.gold = p:GetGoldenHearts()
 	end
 	
-	if Game():GetLevel():GetAbsoluteStage() ~= lastStage then
-		if onConnect then onConnect() end
+	if initialInit or Game():GetLevel():GetAbsoluteStage() ~= lastStage then
+		if onConnect then onConnect("update") end
 		lastStage = Game():GetLevel():GetAbsoluteStage()
+		initialInit = false
 	end
 end
 
-onConnect = function()
+onConnect = function(...)
 	sendHealthStatus()
 	sendChargeStatus()
 	sendRoomList()
