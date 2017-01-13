@@ -1,18 +1,29 @@
 # TODO List
 
-- Cards don't work really good... Wait for fix?!
+## Roadmap
+
+### 0.4
 - Improve log message protocol
-	- Send game state at connection and start of each new stage
-	- Initialize 
-  - Create item listings from ingame data
-		- Check if possible (`Config` is missing)
+	- Send game state at the start of each new stage
+
+### 0.5
+
 - Improve scripting API
 	- Allow registration of multiple callbacks
 		- Abstract away the original callback API
-- Test the Room Tool
-	- Open Devil Deal/Mega Satan/Boss Rush/Blue Womb/The Void
-	- Reroll Level Collectibles
-	- Reroll Level Pickups
+	- Export-Function (Creates a mod-script that will work without BrokenRemote)
+
+### 0.6
+
 - D6-Effect
 - Room Modifications
-- Export-Function (Creates a mod-script that will work without BrokenRemote)
+	- What to do here except for opening all doors?
+	- Test the Room Tool
+		- Open Devil Deal/Mega Satan/Boss Rush/Blue Womb/The Void
+		- Reroll Level Collectibles
+		- Reroll Level Pickups
+
+## Waiting for API fix
+
+- Cards don't work really good... Wait for fix?!
+- Create item listings from ingame data (`Config` is missing)

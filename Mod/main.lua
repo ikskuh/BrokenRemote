@@ -4,6 +4,8 @@ local json = require "json"
 
 local client
 
+local onConnect
+
 local function sendMessage(msg)
 	if client then
 		if type(msg) ~= "table" then
@@ -37,6 +39,8 @@ local function tryConnect(initial)
 		end
 
     print("I am " .. Game():GetPlayer(0):GetName())
+		
+		onConnect()
   else
     client = nil
   end
@@ -235,6 +239,12 @@ function mod:update()
 		lastHealth.black = p:GetBlackHearts()
 		lastHealth.gold = p:GetGoldenHearts()
 	end
+end
+
+onConnect = function()
+	sendHealthStatus()
+	sendChargeStatus()
+	sendRoomList()
 end
 
 mod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, mod.init)
