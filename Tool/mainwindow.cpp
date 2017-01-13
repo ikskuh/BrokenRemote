@@ -16,6 +16,8 @@
 #include <QJsonObject>
 #include <QJsonArray>
 
+#include <math.h>
+
 #include <tuple>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -443,6 +445,9 @@ void MainWindow::on_readReady()
         else if(type == "active-charge") {
             this->setActiveItemChargeOptionsFromJson(obj);
         }
+        else if(type == "health-status") {
+            this->setHealthOptionsFromJson(obj);
+        }
         else {
             this->log("Received unsupported message", "NETWORK");
         }
@@ -521,6 +526,34 @@ void MainWindow::setActiveItemChargeOptionsFromJson(QJsonObject & obj)
         this->ui->actionIncrease_Charge->setEnabled(false);
         this->ui->actionDischarge->setEnabled(false);
     }
+}
+
+void MainWindow::setHealthOptionsFromJson(QJsonObject & obj)
+{
+    int max = obj["max"].toInt();
+    int red = obj["red"].toInt();
+    int soul = obj["soul"].toInt();
+    int black = obj["black"].toInt();
+    int gold = obj["gold"].toInt(0);
+    int maxSoul = 24 - max;
+
+    qDebug() << maxSoul << obj;
+
+    this->ui->actionAdd_Half_Container->setEnabled(max < 24);
+    this->ui->actionAdd_Container->setEnabled(max < 24);
+
+    this->ui->actionAdd_Half_Red->setEnabled(red < max);
+    this->ui->actionAdd_Red->setEnabled(red < max);
+
+    this->ui->actionAdd_Half_Soul->setEnabled(soul < maxSoul);
+    this->ui->actionAdd_Soul->setEnabled(soul < maxSoul);
+
+    this->ui->actionAdd_Black->setEnabled(soul != black);
+    this->ui->actionAdd_Half_Black->setEnabled(soul != black);
+
+    this->ui->actionAdd_Golden_Heart->setEnabled(gold < ceil((red + soul) / 2.0));
+
+    this->ui->actionAdd_Eternal_Heart->setEnabled(max < 24);
 }
 
 void MainWindow::on_actionOpen_and_unlock_all_doors_triggered()

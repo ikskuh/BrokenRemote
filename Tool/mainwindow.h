@@ -62,6 +62,8 @@ private:
 
     void setActiveItemChargeOptionsFromJson(QJsonObject & obj);
 
+    void setHealthOptionsFromJson(QJsonObject & obj);
+
 private slots:
     void on_actionQuit_triggered();
 

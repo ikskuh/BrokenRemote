@@ -70,6 +70,30 @@ function mod:render()
 
 end
 
+local function sendHealthStatus()
+	local function cntBits(num)
+		local r = 0
+		for i=0,11 do
+			if (num >> i) % 2 ~= 0 then
+				r = r + 1
+			end
+		end
+		return r
+	end
+
+	local p = Game():GetPlayer(0)
+	local msg = {
+		type = "health-status",
+		red = p:GetHearts(),
+		max = p:GetMaxHearts(),
+		soul = p:GetSoulHearts(),
+		black = 2*cntBits(p:GetBlackHearts()),
+		blackmask = p:GetBlackHearts(),
+		gold = p:GetGoldenHearts(),
+	}
+	sendMessage(msg)
+end
+
 local function sendChargeStatus()
 	local p = Game():GetPlayer(0)
 	local msg = {
@@ -142,6 +166,7 @@ local function sendRoomList()
 end
 
 local lastItemCharge, lastActiveItem
+local lastHealth = { }
 
 function mod:update()
   if client then
@@ -195,6 +220,20 @@ function mod:update()
 		sendChargeStatus()
 		lastItemCharge = currentCharge
 		lastActiveItem = currentActiveItem
+	end
+
+	local p = Game():GetPlayer(0)
+	if p:GetMaxHearts() ~= lastHealth.max or p:GetHearts() ~= lastHealth.hearts or
+	   p:GetSoulHearts() ~= lastHealth.soul or p:GetBlackHearts() ~= lastHealth.black or
+	   p:GetGoldenHearts() ~= lastHealth.gold then
+
+		sendHealthStatus()
+
+		lastHealth.max = p:GetMaxHearts()
+		lastHealth.hearts = p:GetHearts()
+		lastHealth.soul = p:GetSoulHearts()
+		lastHealth.black = p:GetBlackHearts()
+		lastHealth.gold = p:GetGoldenHearts()
 	end
 end
 

@@ -7,6 +7,7 @@ Changes:
 - Automatic action enable/disable system
 	- "Teleport to" list now only has available rooms enabled
 	- Active item charge modification
+	- Changing health options are now intelligent
 - Adds option to open all doors
 - New Templates
   - Trinket
