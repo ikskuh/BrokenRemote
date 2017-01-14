@@ -115,11 +115,13 @@ end
 local function sendRoomList()
   local l = Game():GetLevel()
   local function hasRoom(t)
-    local rng = RNG()
-    local idx1 = Game():GetLevel():QueryRoomTypeIndex(t, false, rng)
-    rng:Next()
-    local idx2 = Game():GetLevel():QueryRoomTypeIndex(t, false, rng)
-    return (idx1 ~= -1) and (idx1 == idx2)
+	local rng = RNG()
+	local idx1 = Game():GetLevel():QueryRoomTypeIndex(t, false, rng)
+	rng:Next()
+	local idx2 = Game():GetLevel():QueryRoomTypeIndex(t, false, rng)
+	rng:Next()
+	local idx3 = Game():GetLevel():QueryRoomTypeIndex(t, false, rng)
+	return (idx1 ~= -1) and (idx1 == idx2) and (idx1 == idx3)
   end
   local data = { 
     type = "roomlist", 
