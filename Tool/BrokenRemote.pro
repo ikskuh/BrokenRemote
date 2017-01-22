@@ -37,7 +37,8 @@ RESOURCES += \
     icons.qrc
 
 DISTFILES += \
-    app.rc
+    app.rc \
+    ../Mod/main.lua
 
 win32 {
     RC_FILE = app.rc
