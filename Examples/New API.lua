@@ -1,21 +1,31 @@
-mod:SetItemActivation(511, function(player)
+local itemId = Isaac.GetItemIdByName("Mod Active 2")
+
+mod:SetItemActivation(itemId, function(player)
+	-- This is called when the item is activated (use item)
 	print("activate")
 end)
 
-mod:SetItemUpdate(511, function()
-	
+mod:SetItemUpdate(itemId, function()
+	-- This would be called every frame when the item is held.
 end)
 
-mod:SetItemVisualization(511, function()
-	Isaac.RenderText("I has item!", 10, 10, 1,1,1,1)
+mod:SetItemVisualization(itemId, function()
+	-- This method can call custom rendering routines
+	Isaac.RenderText("I has item!", 100, 100, 1,1,1,1)
 end)
 
-mod:SetItemStat(511, CacheFlag.CACHE_DAMAGE, function(p,prev)
-	return prev + 2
+mod:SetItemStat(itemId, CacheFlag.CACHE_DAMAGE, function(p, dmg)
+	-- Interesting use item: It increases damage while held ;)
+	return dmg + 2
+end)
+mod:SetItemPickup(itemId, function(player)
+	-- We have picked up the item
+	print("pickup!")
+end)
+mod:SetItemPutdown(itemId, function(player)
+	-- We have layed down the item
+	print("putdown!")
 end)
 
-mod:SetItemPickup(511, function(player)
-	player:AddCacheFlag(CacheFlag.CACHE_DAMAGE)
-end)
-
+-- Just to make sure everything worked!
 print("done")

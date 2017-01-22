@@ -280,38 +280,50 @@ local mod_data =
 	updates = { },
 	visualizations = { },
 	stats = { },
-	pickups = { },
-	currset = { }
+	pickups = { }
 }
 
-function mod:SetItemActivation(itemId, callback)
+local function checkType(name, val, t)
+  assert(type(val) == t, name .. " should be of type " .. t)
+end
+
+local function getPickupState(itemId)
+  mod_data.pickups[itemId] = mod_data.pickups[itemId] or { has=false,stat=false }
+  return mod_data.pickups[itemId]
+end
+
+function mod:SetItemActivation(itemId, callback) 
+  checkType("itemId", itemId, "number")
+  checkType("callback", callback, "function")
   mod_data.activations[itemId] = callback
 end
 function mod:SetItemUpdate(itemId, callback)
+  checkType("itemId", itemId, "number")
+  checkType("callback", callback, "function")
   mod_data.updates[itemId] = callback
 end
 function mod:SetItemVisualization(itemId, callback)
+  checkType("itemId", itemId, "number")
+  checkType("callback", callback, "function")
   mod_data.visualizations[itemId] = callback
 end
 function mod:SetItemStat(itemId, cache, callback)
+  checkType("itemId", itemId, "number")
+  checkType("cache", cache, "number")
+  checkType("callback", callback, "function")
   mod_data.stats[itemId] = mod_data.stats[itemId] or { }
 	mod_data.stats[itemId][cache] = callback
+  getPickupState(itemId).stat = true
 end
 function mod:SetItemPickup(itemId, callback)
-  mod_data.pickups[itemId] = callback
+  checkType("itemId", itemId, "number")
+  checkType("callback", callback, "function")
+  getPickupState(itemId).pickup = callback
 end
-
-local function mod_update(mod, ...)
-  local p = Game():GetPlayer(0)
-
-  for item, vis in pairs(mod_data.updates) do
-	  if p:HasCollectible(item) then
-		  local ok, result = pcall(vis)
-			if not ok and client then
-			  sendMessage { type="err", msg="Failed to execute item update ("..tostring(item).."): " .. tostring(result) }
-			end
-		end
-	end
+function mod:SetItemPutdown(itemId, callback)
+  checkType("itemId", itemId, "number")
+  checkType("callback", callback, "function")
+  getPickupState(itemId).putdown = callback
 end
 
 local function mod_render(mod)
@@ -337,24 +349,80 @@ end
 
 local function mod_cache(mod, player, cache)
   local propnames = {
-	  [CacheFlag.CACHE_DAMAGE] = "Damage",
-		[CacheFlag.CACHE_FIREDELAY] = "MaxFireDelay",
-		[CacheFlag.CACHE_SHOTSPEED] = "ShotSpeed",
-		-- [CacheFlag.CACHE_RANGE] = "", -- Implement better
-		[CacheFlag.CACHE_SPEED] = "MoveSpeed",
-		[CacheFlag.CACHE_TEARFLAG] = "TearFlags",
-		[CacheFlag.CACHE_TEARCOLOR] = "TearColor",
-		[CacheFlag.CACHE_FLYING] = "CanFly",
-		[CacheFlag.CACHE_LUCK] = "Luck",
+	  [CacheFlag.CACHE_DAMAGE] = { "Damage" },
+		[CacheFlag.CACHE_FIREDELAY] = { "MaxFireDelay" },
+		[CacheFlag.CACHE_SHOTSPEED] = { "ShotSpeed" },
+		[CacheFlag.CACHE_RANGE] = { "TearHeight", "TearFallingSpeed" },
+		[CacheFlag.CACHE_SPEED] = { "MoveSpeed" } ,
+		[CacheFlag.CACHE_TEARFLAG] = { "TearFlags" },
+		[CacheFlag.CACHE_TEARCOLOR] = { "TearColor" },
+		[CacheFlag.CACHE_FLYING] = { "CanFly" },
+		[CacheFlag.CACHE_LUCK] = { "Luck" },
 	}
-	local statnam = propnames[cache]
+	local statlist = propnames[cache]
 	for item, stats in pairs(mod_data.stats) do
 	  if player:HasCollectible(item) and stats[cache] then
-		  local ok, result = pcall(stats[cache], player, player[statname])
+      local input = { }
+      for i,v in ipairs(statlist) do
+        input[i] = player[v]
+        print(i, v, input[i])
+      end
+    
+		  local rdata = table.pack(pcall(stats[cache], player, table.unpack(input)))
+      for i,v in pairs(rdata) do
+        print("result", i, v)
+      end
+			if not rdata[1] and client then
+			  sendMessage { type="err", msg="Failed to execute item stat ("..tostring(item)..","..tostring(cache).."): " .. tostring(rdata[2]) }
+			end
+      if rdata[1] then
+        print("mod stat?")
+        for i,v in ipairs(statlist) do
+          print("i=",i, v)
+          print(player[v])
+          print(rdata[i + 1])
+          player[v] = rdata[i + 1]
+        end
+        print("mod stat!")
+			end
+		end
+	end
+end
+
+local function mod_update(mod, ...)
+  local p = Game():GetPlayer(0)
+  
+  for item,status in pairs(mod_data.pickups) do
+    local curr = p:HasCollectible(item)
+    if curr ~= status.has then
+      status.has = curr
+      
+      if status.stat then
+        -- Enforce all item changes
+        for i,v in pairs(mod_data.stats[item]) do
+          p:AddCacheFlags(i)
+        end
+        p:EvaluateItems()
+      end
+      
+      -- Call the pick-up callback
+      if status.has and status.pickup then
+        status.pickup(p)
+      end
+      
+      -- Call the put-down callback
+      if not status.has and status.putdown then
+        status.putdown(p)
+      end
+      
+    end
+  end
+
+  for item, vis in pairs(mod_data.updates) do
+	  if p:HasCollectible(item) then
+		  local ok, result = pcall(vis)
 			if not ok and client then
-			  sendMessage { type="err", msg="Failed to execute item stat ("..tostring(item)..","..tostring(cache).."): " .. tostring(result) }
-			elseif ok then
-			  player[statnam] = result
+			  sendMessage { type="err", msg="Failed to execute item update ("..tostring(item).."): " .. tostring(result) }
 			end
 		end
 	end
